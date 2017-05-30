@@ -25,8 +25,12 @@
     "angular-material-icons": "^0.7.1",
     "angular-messages": "^1.6.4",
     "angular-route": "^1.6.4",
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "mongoose": "^4.10.4"
+    "express-session": "^1.15.3",
+    "mongoose": "^4.10.4",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   }
 }
