@@ -1,0 +1,58 @@
+#Solo Project - Neota Moe
+
+##To Do:  
+
+* [ ] Submit scope of work and obtain approval - 5/30/17
+	- submitted 5/30/17
+	- to do list created
+* [ ] Initial file structure, server up, routes set up - 5/30/17
+	- include models, modules, routes, views
+	- npm init
+	- git init
+* [ ] Format questions and import into database - 5/30/17 
+	- design model and schema for mongoDB
+	- format questions
+	- export in csv format
+	- import into database
+* [ ] Complete landing page and connect to database - 5/31/17 
+	- basic style setup displaying chapter titles
+	- decide first draft colors and fonts
+	- checkbox for keyword/tags functional (but not yet displaying)
+	- separate landing page into 2 views for question selection via checkbox or chapter 
+	- add student/user "how to use app" paragraph including recommended browser
+* [ ] Passport authentication and register/login pages functional - 6/2/17 
+	- utilize code base for authentication
+	- register page
+	- login page
+	- ensure links between login and register pages works
+* [ ] Quiz questions pulling from database (including front end formatting and search functionality) - 6/5/17 
+	- basic template for question display
+	- display to be mobile-responsive
+	- random number generator to display 5 random questions to display upon chapter or keyword selection
+	- ensure checkboxes pulling questions and displaying
+* [ ] Complete admin page/view - 6/6/17   
+	- check admin email address
+	- make sure schema accounts for admin approval/denial of question
+* [ ] Nodemailer functional - 6/7/17
+	- will need help here!
+* [ ] Student/user able to submit a question - 6/8/17  
+	- checkboxes working for submission
+	- basic input styling
+* [ ] Administrator able to accept or decline student-submitted question for inclusion into database - 6/9/17    
+	- approve/deny buttons working (ensure status in database changes upon click)
+	- administrator able to edit fields of submitted question
+* [ ] Deploy to Heroku - 6/12/17
+
+##Project Overview
+**Science123 Quiz App** (final app name yet to be finalized) is a full-stack web application to complement learning in the Science123 course at Augsburg College.  Sci123 is a general education science course most often taken by students looking to fulfill their general education science credit needed for graduation.  
+
+The goal of the app is to encourage learning outside of the classroom as students are engaged with food in everyday life (e.g. while cooking at home).  The app displays quiz questions based on the primary text “On Food and Cooking: The Science and Lore of the Kitchen” by Harold McGee.  Each question also provides a reference to the text to encourage students to learn more.  The quiz feature will be mobile-responsive.
+
+##Solo Project
+From Prime Digital Academy Website:   
+**PROJECT-BASED LEARNING**   
+Software engineers learn by doing—that’s why Prime dedicates the final third of the program to project-based learning. In this phase, you’ll have the chance to work a project of your own design as well as help a real-world organization solve a real-world problem. You’ll get a chance to dive into a project you’re passionate about and build an app from top to bottom on your own and you’ll learn how to be part of a successful software development team, practicing behaviors and techniques you’ll use every day as a working software engineer.    
+
+Your solo project is an incredible opportunity to spend two full weeks sharpening your development skills while showcasing your passions. You’ll be working solo, but you’re far from alone. You’ll do daily “standup” meetings where you discuss what you’re tackling and get support where you need it from your peers and your instructors. In the end, this project will be an excellent tool to show prospective employers who you are and what you’re capable of."
+
+
