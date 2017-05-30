@@ -2,6 +2,7 @@
 
 ##To Do:  
 
+
 * [ ] Submit scope of work and obtain approval - 5/30/17
 	- submitted 5/30/17
 	- to do list created

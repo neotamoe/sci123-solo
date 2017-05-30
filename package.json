@@ -1,0 +1,32 @@
+{
+  "name": "sci123-solo",
+  "version": "1.0.0",
+  "description": "Solo project of Neota Moe, student at Prime Digital Academy (Psi cohort).  Quiz-style app for general education science course Sci123 at Augsburg College to complement learning.  App designed in partnership with Ben Stottrup, PhD.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neotamoe/sci123-solo.git"
+  },
+  "author": "Neota Moe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neotamoe/sci123-solo/issues"
+  },
+  "homepage": "https://github.com/neotamoe/sci123-solo#readme",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-animate": "^1.6.4",
+    "angular-aria": "^1.6.4",
+    "angular-material": "^1.1.4",
+    "angular-material-icons": "^0.7.1",
+    "angular-messages": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.4"
+  }
+}
