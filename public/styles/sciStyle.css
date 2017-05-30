@@ -1,11 +1,16 @@
+/*
+augsburg color: #650a34
+*/
+
 .instructions .container h1 {
-    font-size: 24px;
+    font-size: 36px;
     font-weight: 700;
+    text-align: center;
 }
 
 .instructions {
-    background-color: #333333;
-    color: #DDDDDD;
+    background-color: #650a34;
+    color: silver;
     height: 100px;
 }
 

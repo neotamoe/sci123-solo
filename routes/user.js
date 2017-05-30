@@ -11,6 +11,7 @@ router.get('/', function(req, res) {
     // send back user object from database
     console.log('logged in');
     res.send(req.user);
+    console.log(req.user);
   } else {
     // failure best handled on the server. do redirect here.
     console.log('not logged in');

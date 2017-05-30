@@ -4,8 +4,15 @@ var bcrypt = require('bcrypt');
 var SALT_WORK_FACTOR = 10;
 
 // Mongoose Schema
+// original
+// var UserSchema = new Schema({
+//     username: {type: String, required: true, index: {unique: true}},
+//     password: {type: String, required: true}
+// });
+
 var UserSchema = new Schema({
-    username: {type: String, required: true, index: {unique: true}},
+    email: {type: String, required: true, index: {unique: true}},
+    firstName: {type: String, required: true},
     password: {type: String, required: true}
 });
 

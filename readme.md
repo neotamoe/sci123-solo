@@ -3,13 +3,13 @@
 ##To Do:  
 
 
-* [ ] Submit scope of work and obtain approval - 5/30/17
+* [x] Submit scope of work and obtain approval - 5/30/17
 	- submitted 5/30/17
-	- to do list created
-* [ ] Initial file structure, server up, routes set up - 5/30/17
-	- include models, modules, routes, views
-	- npm init
-	- git init
+	- to do list created 5/30/17
+* [x] Initial file structure, server up, routes set up - 5/30/17
+	- [x] include folders for models, modules, routes, views
+	- [x] npm init 5/30/17
+	- [x] git init 5/30/17
 * [ ] Format questions and import into database - 5/30/17 
 	- design model and schema for mongoDB
 	- format questions
