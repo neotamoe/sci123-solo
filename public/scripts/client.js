@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial']);
 
-/// Routes ///
+// ROUTES - CONFIG
 myApp.config(['$routeProvider', '$locationProvider','$mdThemingProvider', function($routeProvider, $locationProvider,$mdThemingProvider) {
   $locationProvider.hashPrefix('');
   $routeProvider
@@ -17,19 +17,19 @@ myApp.config(['$routeProvider', '$locationProvider','$mdThemingProvider', functi
       controller: "UserController as uc"
     })
     .otherwise({
-      redirectTo: 'home'
+      redirectTo: '/home'
     });
   $mdThemingProvider.theme('default')
-    .primaryPalette('orange', {
+    .primaryPalette('deep-purple', {
       'default': '400', // by default use shade 400 from the orange palette for primary intentions
       'hue-1': '100', // use shade 100 for the <code>md-hue-1</code> class
       'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
       'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
     })
-    .accentPalette('deep-purple', {
-      'default': '300' // use shade 300 for default, and keep all other shades the same
-    })
-    .backgroundPalette('grey', {
-      'default': '300'
+    // .accentPalette('deep-purple', {
+    //   'default': '300' // use shade 300 for default, and keep all other shades the same
+    // })
+    .backgroundPalette('orange', {
+      'default': '200'
     });
 }]);
