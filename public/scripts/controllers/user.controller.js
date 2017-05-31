@@ -1,4 +1,4 @@
-myApp.controller('UserController', ['$http', '$location', function($http, $location) {
+myApp.controller('UserController', ['$http', '$location', 'questionsService', function($http, $location, questionsService) {
   // This happens after view/controller loads -- not ideal but it works for now.
   var vm = this;
 
@@ -23,4 +23,12 @@ myApp.controller('UserController', ['$http', '$location', function($http, $locat
       $location.path("/home");
     });
   };
+
+  vm.getQuestions = function(chapter){
+    questionsService.getQuestions(chapter).then(function(status){
+      console.log('back from server after get questions http');
+    });
+  };
+
+
 }]);

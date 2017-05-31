@@ -4,23 +4,23 @@
 
 
 * [x] Submit scope of work and obtain approval - 5/30/17
-	- submitted 5/30
-	- to do list created 5/30
+	- [x] submitted 5/30
+	- [x] to do list created 5/30
 * [x] Initial file structure, server up, routes set up - 5/30/17
 	- [x] include folders for models, modules, routes, views
 	- [x] npm init 5/30
 	- [x] git init 5/30
 * [ ] Format questions and import into database - 5/30/17 
 	- [x]design model and schema for mongoDB 5/30
-	- format questions
-	- export in csv format
-	- import into database
+	- format questions - in progress (1/7 done 5/30)
+	- export in csv format - in progress (1/7 done 5/30)
+	- import into database -  in progress (1/7 done 5/30)
 * [ ] Complete landing page and connect to database - 5/31/17 
 	- basic style setup displaying chapter titles
 	- decide first draft [x] colors and fonts
 	- checkbox for keyword/tags functional (but not yet displaying)
 	- separate landing page into 2 views for question selection via checkbox or chapter 
-	- add student/user "how to use app" paragraph including recommended browser
+	- add student/user "how to use app" paragraph (including recommended browser?)
 * [x] Passport authentication and register/login pages functional - 6/2/17 
 	- [x] utilize code base for authentication 5/30
 	- [ ] register page, 5/30 function, needs styling
