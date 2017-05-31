@@ -4,12 +4,6 @@ var bcrypt = require('bcrypt');
 var SALT_WORK_FACTOR = 10;
 
 // Mongoose Schema
-// original
-// var UserSchema = new Schema({
-//     username: {type: String, required: true, index: {unique: true}},
-//     password: {type: String, required: true}
-// });
-
 var UserSchema = new Schema({
     email: {type: String, required: true, index: {unique: true}},
     firstName: {type: String, required: true},
@@ -36,8 +30,8 @@ UserSchema.pre('save', function(next) {
 
             user.password = hash;
             next();
-        })
-    })
+        });
+    });
 });
 
 // Used by login methods to compare login form password to DB password

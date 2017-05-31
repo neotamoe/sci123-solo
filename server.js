@@ -7,6 +7,7 @@ var path = require('path');
 var passport = require('./strategies/user.strategy');
 var session = require('express-session');
 
+var questions = require ('./models/questions.model');
 // Route includes
 var index = require('./routes/index');
 var user = require('./routes/user');
@@ -46,10 +47,10 @@ if(process.env.MONGODB_URI != undefined) {
     mongoURI = process.env.MONGODB_URI;
 } else {
     // use the local database server
-    mongoURI = 'mongodb://localhost:27017/passport';
+    mongoURI = 'mongodb://localhost:27017/sci123Solo';
 }
 
-// var mongoURI = "mongodb://localhost:27017/passport";
+// var mongoURI = "mongodb://localhost:27017/sci123Solo";
 var mongoDB = mongoose.connect(mongoURI).connection;
 
 mongoDB.on('error', function(err){

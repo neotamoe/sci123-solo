@@ -9,8 +9,6 @@ augsburg color: #650a34
 }
 
 .instructions {
-    background-color: #650a34;
-    color: silver;
     height: 100px;
 }
 
@@ -35,11 +33,11 @@ augsburg color: #650a34
 }
 
 .message:nth-child(odd) {
-     background-color: #eeeeee;
+     /*background-color: #eeeeee;*/
 }
 
 .message:nth-child(even) {
-    background-color: #f8f8f8;
+    /*background-color: #f8f8f8;*/
 }
 
 .btn-danger{
