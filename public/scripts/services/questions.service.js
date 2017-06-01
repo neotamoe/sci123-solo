@@ -14,6 +14,24 @@ myApp.service('questionsService', function($http){
   };
 });  // end questionService
 
+// from amy--tried params
+// self.getQuestions = function(thisChapter){
+//   console.log('getQuestions from chapter-->', thisChapter);
+//   return $http({
+//     method: 'GET',
+//     url: '/questions',
+//     params: {
+//       chapter: thisChapter,
+//       display: true,
+//     }
+//   }).then(function(response){
+//     // return console.log('chapter woof');
+//     return response.data;
+//   });
+// };
+// });  // end questionService
+
+
   // self.getFaves = function(){
   //   return $http({
   //     method: 'GET',

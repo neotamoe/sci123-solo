@@ -14,7 +14,7 @@ var QuestionSchema = new Schema({
   d: String,
   answer: String,
   tags: String,
-  display: Boolean,
+  display: String,
 });
 
 // model
