@@ -7,11 +7,12 @@ var path = require('path');
 var passport = require('./strategies/user.strategy');
 var session = require('express-session');
 
-var questions = require ('./models/questions.model');
+// var questions = require ('./models/questions.model');
 // Route includes
 var index = require('./routes/index');
 var user = require('./routes/user');
 var register = require('./routes/register');
+var questions = require('./routes/questions');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -36,6 +37,7 @@ app.use(passport.session());
 // Routes
 app.use('/register', register);
 app.use('/user', user);
+app.use('/questions/', questions);
 app.use('/*', index);
 
 // Mongo Connection //

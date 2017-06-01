@@ -4,7 +4,8 @@ var Schema = mongoose.Schema;
 
 // schema
 var QuestionSchema = new Schema({
-  chapter: String,
+  chapter: Number,
+  source: String,
   page: Number,
   question: String,
   a: String,

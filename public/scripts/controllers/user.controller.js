@@ -25,8 +25,9 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', fu
   };
 
   vm.getQuestions = function(chapter){
-    questionsService.getQuestions(chapter).then(function(status){
+    questionsService.getQuestions(chapter).then(function(data){
       console.log('back from server after get questions http');
+      console.log('data-->', data);
     });
   };
 

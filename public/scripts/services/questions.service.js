@@ -8,8 +8,8 @@ myApp.service('questionsService', function($http){
       method: 'GET',
       url: '/questions/' + chapter,
     }).then(function(response){
-      return console.log('chapter woof');
-      // return response.data;
+      // return console.log('chapter woof');
+      return response.data;
     });
   };
 });  // end questionService
