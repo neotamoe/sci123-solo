@@ -26,9 +26,3 @@ router.get('/:chapter', function(req, res) {
 
 
 module.exports = router;
-
-// {$match: {chapter:req.params.chapter}},
-// {$sample:{size:5}}
-// ])
-// ({$and: [{display:'true',chapter:req.params.chapter}]})
-// questionsModel.aggregate([{$project: {display:true, chapter:req.params.chapter}},{$sample:{size:5}}])
