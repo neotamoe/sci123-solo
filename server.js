@@ -7,7 +7,6 @@ var path = require('path');
 var passport = require('./strategies/user.strategy');
 var session = require('express-session');
 
-// var questions = require ('./models/questions.model');
 // Route includes
 var index = require('./routes/index');
 var user = require('./routes/user');

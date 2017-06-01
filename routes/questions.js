@@ -13,7 +13,7 @@ router.get('/:chapter', function(req, res) {
     // send back user object from database
     console.log('still logged in');
     questionsModel.aggregate([{$match: {display:'true', chapter:currentChapter}},{$sample:{size:5}}]).then(function(data){
-      console.log('data for chapter' + req.params.chapter+ '-->', data);
+      console.log('data for chapter' + currentChapter + '-->', data);
       res.send(data);
     });
   } else {

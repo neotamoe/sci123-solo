@@ -28,6 +28,7 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', fu
     questionsService.getQuestions(chapter).then(function(data){
       console.log('back from server after get questions http');
       console.log('data-->', data);
+      vm.fivequestions
     });
   };
 

@@ -19,7 +19,7 @@
 	- [x] basic style setup displaying chapter titles
 	- decide first draft [x] colors and fonts
 	- checkbox for keyword/tags functional (but not yet displaying)
-	- separate landing page into 2 views for question selection via checkbox or chapter 
+	- ??separate landing page into 2 views for question selection via checkbox or chapter 
 	- add student/user "how to use app" paragraph (including recommended browser?)
 * [x] Passport authentication and register/login pages functional - 6/2/17 
 	- [x] utilize code base for authentication 5/30
