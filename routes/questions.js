@@ -7,11 +7,12 @@ var questionsModel = require('../models/questions.model');
 // Handles Ajax request for user information if user is authenticated
 router.get('/:chapter', function(req, res) {
   console.log(' in get route for chapter-->', req.params.chapter);
+  var currentChapter = parseInt(req.params.chapter);
   // check if logged in
   if(req.isAuthenticated()) {
     // send back user object from database
     console.log('still logged in');
-    questionsModel.aggregate([{$project: {display:true, chapter:req.params.chapter}},{$sample:{size:5}}]).then(function(data){
+    questionsModel.aggregate([{$match: {display:'true', chapter:currentChapter}},{$sample:{size:5}}]).then(function(data){
       console.log('data for chapter' + req.params.chapter+ '-->', data);
       res.send(data);
     });
@@ -25,3 +26,9 @@ router.get('/:chapter', function(req, res) {
 
 
 module.exports = router;
+
+// {$match: {chapter:req.params.chapter}},
+// {$sample:{size:5}}
+// ])
+// ({$and: [{display:'true',chapter:req.params.chapter}]})
+// questionsModel.aggregate([{$project: {display:true, chapter:req.params.chapter}},{$sample:{size:5}}])
