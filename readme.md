@@ -16,7 +16,7 @@
 	- export in csv format - in progress (1/7 done 5/30)
 	- import into database -  in progress (1/7 done 5/30)
 * [ ] Complete landing page and connect to database - 5/31/17 
-	- basic style setup displaying chapter titles
+	- [x] basic style setup displaying chapter titles
 	- decide first draft [x] colors and fonts
 	- checkbox for keyword/tags functional (but not yet displaying)
 	- separate landing page into 2 views for question selection via checkbox or chapter 

@@ -11,11 +11,10 @@ router.get('/:chapter', function(req, res) {
   if(req.isAuthenticated()) {
     // send back user object from database
     console.log('still logged in');
-    questionsModel.find({$and:[{display:'true', chapter:req.params.chapter}]}).then(function(data){
+    questionsModel.aggregate([{$project: {display:true, chapter:req.params.chapter}},{$sample:{size:5}}]).then(function(data){
       console.log('data for chapter' + req.params.chapter+ '-->', data);
       res.send(data);
     });
-
   } else {
     // failure best handled on the server. do redirect here.
     console.log('not logged in');
@@ -26,19 +25,3 @@ router.get('/:chapter', function(req, res) {
 
 
 module.exports = router;
-
-
-// from amy--tried req.query
-// router.get('/', function(req, res) {
-//   console.log(' in get route for chapter-->', req.query);
-//   // check if logged in
-//   if(req.isAuthenticated()) {
-//     // send back user object from database
-//     console.log('still logged in');
-//     questionsModel.find({
-//       chapter: req.query.chapter,
-//       display: req.query.true
-//     }).then(function(data){
-//       console.log('data for chapter' + req.query.chapter + '-->', data);
-//       res.send(data);
-//     });
