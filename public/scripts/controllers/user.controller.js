@@ -24,24 +24,4 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', '$
     });
   };
 
-
-
-  vm.getQuestions = function(chapter){
-    questionsService.getQuestions(chapter).then(function(data){
-      console.log('back from server with five random questions/data-->', data);
-      vm.fiveData = data;
-      console.log('vm.fiveData:', vm.fiveData);
-      // $scope.$apply()
-    });
-  };
-
-//stackoverflow.com/questions/30562262/angularjs-display-one-specific-object-in-an-array-at-a-time
-  // vm.setSelectedItem = function (item) {
-  //   vm.selectedItem = item;
-  // };
-
-
-
-
-
 }]);  // end UserController
