@@ -13,7 +13,7 @@ var QuestionSchema = new Schema({
   c: String,
   d: String,
   answer: String,
-  tags: String,
+  tags: Array,
   display: String,
 });
 

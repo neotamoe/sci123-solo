@@ -26,3 +26,6 @@ router.get('/:chapter', function(req, res) {
 
 
 module.exports = router;
+
+// must use terminal to access mongo and run the following function to split tags into array after import from csv
+// db.questions.find().snapshot().forEach(function(x){x.tags=x.tags.split(',');db.questions.save(x);});
