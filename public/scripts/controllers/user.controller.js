@@ -27,7 +27,8 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', fu
   vm.getQuestions = function(chapter){
     questionsService.getQuestions(chapter).then(function(data){
       console.log('back from server with five random questions/data-->', data);
-      return vm.fiveData = data;
+      vm.fiveData = data;
+      console.log('vm.fiveData:', vm.fiveData);
     });
   };
 

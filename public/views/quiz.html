@@ -1,3 +1,19 @@
-<div>
-  <h1>this is the questions page</h1>
+<div class="quizDiv" >
+  <h1>stuff should be on this page</h1>
+
+<div ng-repeat="item in uc.fiveData">
+  <p>{{item.question}}</p>
+  <div >
+    <p><button type="button" name="button">A</button>{{item.a}}</p>
+    <p><button type="button" name="button">B</button>{{item.b}}</p>
+    <p><button type="button" name="button">C</button>{{item.c}}</p>
+    <p><button type="button" name="button">D</button>{{item.d}}</p>
+
+  </div>
+  <form>
+  </form>
+  <p>This would be hidden: {{item.answer}}</p>
+  <p>Learn More: {{item.learn}}</p>
+  <p>Tags: {{item.tags}}</p>
+</div>
 </div>
