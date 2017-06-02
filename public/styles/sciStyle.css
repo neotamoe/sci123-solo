@@ -12,6 +12,11 @@ augsburg color: #650a34
     height: 100px;
 }
 
+#answer {
+  color: red;
+  font-weight: bold;
+}
+
 #entryForm {
     margin-top: 14px;
 }

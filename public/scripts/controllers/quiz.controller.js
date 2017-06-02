@@ -38,23 +38,26 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
   vm.getQuestions();
 
   vm.fiveData_index = 0;
+  vm.showMessage = false;
   // vm.quizQ = {};
 
   vm.next = function () {
-    vm.message='';
-      if (vm.fiveData_index >= vm.fiveData.length - 1) {
-          vm.fiveData_index = 0;
-      } else {
-          vm.fiveData_index++;
-      }
-      console.log(vm.fiveData_index + '/' + vm.fiveData.length);
+    vm.showMessage = false;
+    if (vm.fiveData_index >= vm.fiveData.length - 1) {
+      vm.fiveData_index = 0;
+    } else {
+      vm.fiveData_index++;
+    }
+    console.log('index' + vm.fiveData_index + '/' + 'length' + vm.fiveData.length);
   };
 
   vm.check = function(answer){
     console.log('you clicked:', answer);
     if (answer==vm.fiveData[vm.fiveData_index].answer) {
+      vm.showMessage = true;
       vm.message = 'Correct!';
     } else{
+      vm.showMessage = true;
       vm.message = 'Incorrect.  The correct answer is ' + vm.fiveData[vm.fiveData_index].answer + '.';
     }
   };

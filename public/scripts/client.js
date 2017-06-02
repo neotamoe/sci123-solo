@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial', 'ngSanitize']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial']);
 
 // ROUTES - CONFIG
 myApp.config(['$routeProvider', '$locationProvider','$mdThemingProvider', function($routeProvider, $locationProvider,$mdThemingProvider) {
@@ -25,15 +25,15 @@ myApp.config(['$routeProvider', '$locationProvider','$mdThemingProvider', functi
       redirectTo: '/home'
     });
   $mdThemingProvider.theme('default')
-    .primaryPalette('deep-purple', {
-      'default': '400', // by default use shade 400 from the orange palette for primary intentions
+    .primaryPalette('orange', {
+      'default': '400', // by default use shade 400 from the deep-purple palette for primary intentions
       'hue-1': '100', // use shade 100 for the <code>md-hue-1</code> class
       'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
       'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
     })
-    // .accentPalette('deep-purple', {
-    //   'default': '300' // use shade 300 for default, and keep all other shades the same
-    // })
+    .accentPalette('deep-purple', {
+      'default': '300' // use shade 300 for default, and keep all other shades the same
+    })
     .backgroundPalette('orange', {
       'default': '200'
     });

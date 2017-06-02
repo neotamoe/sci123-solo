@@ -26,14 +26,14 @@
 	- [/] register page, 5/30 function, needs styling
 	- [/] login page, 5/30 funtional, needs styling
 	- [x] ensure links between login and register pages works
-* [ ] Quiz questions pulling from database (including front end formatting and search functionality) - 6/5/17 
-	- basic template for question display
+* [/] Quiz questions pulling from database (including front end formatting and search functionality) - 6/5/17 
+	- [x]basic template for question display
 	- display to be mobile-responsive
 	- [x]random number generator to display 5 random questions to display upon chapter or keyword selection
 	- ensure checkboxes pulling questions and displaying
 * [ ] Complete admin page/view - 6/6/17   
 	- check admin email address
-	- make sure schema accounts for admin approval/denial of question
+	- [x]make sure schema accounts for admin approval/denial of question
 * [ ] Nodemailer functional - 6/7/17
 	- will need help here!
 * [ ] Student/user able to submit a question - 6/8/17  

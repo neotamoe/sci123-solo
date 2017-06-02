@@ -1,31 +1,21 @@
 <div>
-    <md-button class="md-raised md-primary" ng-click="qc.logout()">Log Out</md-button>
+    <md-button class="md-raised md-accent" ng-click="qc.logout()">Log Out</md-button>
 </div>
-<hr>
-<!-- <div ng-repeat="item in qc.fiveData">
-  <h2>{{item.question}}</h2>
-    <p><button type="button" name="button">A</button>{{item.a}}</p>
-    <p><button type="button" name="button">B</button>{{item.b}}</p>
-    <p><button type="button" name="button">C</button>{{item.c}}</p>
-    <p><button type="button" name="button">D</button>{{item.d}}</p>
-    <p>This would be hidden: {{item.answer}}</p>
-    <p>Learn More: {{item.source}} at {{item.page}}</p>
-</div> -->
+<hr />
 
 <div ng-repeat="q in qc.fiveData">
   <div ng-if="qc.fiveData_index == $index">
     <h2>{{q.question}}</h2>
-    <p><button type="button" ng-click="qc.check('A')"> A </button>  {{q.a}}</p>
-    <p><button type="button" ng-click="qc.check('B')"> B </button>  {{q.b}}</p>
-    <p><button type="button" ng-click="qc.check('C')"> C </button>  {{q.c}}</p>
-    <p><button type="button" ng-click="qc.check('D')"> D </button>  {{q.d}}</p>
+    <p><md-button type="button" ng-click="qc.check('A')" class="md-fab md-hue-1"> A </md-button>  {{q.a}}</p>
+    <p><md-button type="button" ng-click="qc.check('B')" class="md-fab md-hue-1"> B </md-button>  {{q.b}}</p>
+    <p><md-button type="button" ng-click="qc.check('C')" class="md-fab md-hue-1"> C </md-button>  {{q.c}}</p>
+    <p><md-button type="button" ng-click="qc.check('D')" class="md-fab md-hue-1"> D </md-button>  {{q.d}}</p>
     <p><em>Need a Hint?</em>  Learn More in {{q.source}} at {{q.page}}.</p>
-    <p ng-bind-html="qc.message"></p>
-    <!-- <p ng-if="">{{qc.message}}</p> -->
+    <p ng-if="qc.showMessage===true" id="answer">{{qc.message}}</p>
   </div>
 </div>
-<hr>
-<button ng-click="qc.next()">Next Question</button>
-<hr>
+<md-button class="md-accent md-raised" ng-click="qc.next()">Next Question</md-button>
+
+
 <!-- Question: {{qc.quizQ.question}} -->
 <!-- <button ng-click="qc.choose(q)">Choose</button> -->

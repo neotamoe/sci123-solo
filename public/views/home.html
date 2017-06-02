@@ -1,6 +1,6 @@
 <div class="container">
-  <h1 class="lead">Login</h1>
-    <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
+  <h1>Login</h1>
+    <h1 class="alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
     <form>
       <div>
         <label for="email">Email:</label>
@@ -11,7 +11,7 @@
         <input type="password" ng-model="lc.user.password" />
       </div>
       <div>
-        <md-button class="md-raised md-primary" ng-click="lc.login()">Login</md-button>
+        <md-button class="md-raised md-accent" ng-click="lc.login()">Login</md-button>
         <a href="#register">Not signed up?  Register</a>
       </div>
     </form>
