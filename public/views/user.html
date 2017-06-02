@@ -28,3 +28,17 @@
     <a href="#/quiz/16"><md-button class="md-raised md-accent">Appendix</md-button></a>
     <a href="#/quiz/17"><md-button class="md-raised md-accent">Measurement</md-button></a>
   </section>
+
+  <div class="md-padding checkbox" ng-cloak="" style="min-height:270px">
+    <div layout="row" layout-wrap="">
+      <div layout="column">
+        <div layout="row" layout-wrap flex>
+          <div flex="100" ng-repeat="item in uc.items track by $index">
+            <md-checkbox ng-checked="uc.exists(item, uc.selected)" ng-click="uc.toggle(item, uc.selected)">
+              {{ item }} <span ng-if="uc.exists(item, uc.selected)">selected</span>
+            </md-checkbox>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

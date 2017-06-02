@@ -11,4 +11,14 @@ myApp.service('questionsService', function($http){
       return response.data;
     });
   };
+
+  self.getTags = function(){
+    console.log('get tags from all questions');
+    return $http({
+      method: 'GET',
+      url: '/questions/',
+    }).then(function(response){
+      return response.data;
+    });
+  };
 });  // end questionService

@@ -24,4 +24,32 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', '$
     });
   };
 
+  vm.getTags = function(){
+    questionsService.getTags().then(function(data){
+      console.log('back from server with tags-->', data);
+      vm.items = data;
+      console.log('vm.items:', vm.items);
+      return vm.items;
+    });
+  };
+
+  vm.getTags();
+
+  vm.items = [];
+  vm.selected = [];
+
+  vm.toggle = function (item, list) {
+    var idx = list.indexOf(item);
+    if (idx > -1) {
+      list.splice(idx, 1);
+    }
+    else {
+      list.push(item);
+    }
+  };
+
+  vm.exists = function (item, list) {
+    return list.indexOf(item) > -1;
+  };
+
 }]);  // end UserController
