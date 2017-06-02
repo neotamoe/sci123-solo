@@ -39,10 +39,12 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
 
   vm.fiveData_index = 0;
   vm.showMessage = false;
+  vm.buttonDisabled = false;
   // vm.quizQ = {};
 
   vm.next = function () {
     vm.showMessage = false;
+    vm.buttonDisabled = false;
     if (vm.fiveData_index >= vm.fiveData.length - 1) {
       vm.fiveData_index = 0;
     } else {
@@ -55,9 +57,11 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
     console.log('you clicked:', answer);
     if (answer==vm.fiveData[vm.fiveData_index].answer) {
       vm.showMessage = true;
+      vm.buttonDisabled=true;
       vm.message = 'Correct!';
     } else{
       vm.showMessage = true;
+      vm.buttonDisabled=true;
       vm.message = 'Incorrect.  The correct answer is ' + vm.fiveData[vm.fiveData_index].answer + '.';
     }
   };

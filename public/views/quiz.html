@@ -6,16 +6,12 @@
 <div ng-repeat="q in qc.fiveData">
   <div ng-if="qc.fiveData_index == $index">
     <h2>{{q.question}}</h2>
-    <p><md-button type="button" ng-click="qc.check('A')" class="md-fab md-hue-1"> A </md-button>  {{q.a}}</p>
-    <p><md-button type="button" ng-click="qc.check('B')" class="md-fab md-hue-1"> B </md-button>  {{q.b}}</p>
-    <p><md-button type="button" ng-click="qc.check('C')" class="md-fab md-hue-1"> C </md-button>  {{q.c}}</p>
-    <p><md-button type="button" ng-click="qc.check('D')" class="md-fab md-hue-1"> D </md-button>  {{q.d}}</p>
+    <p><md-button type="button" ng-click="qc.check('A')" ng-disabled="qc.buttonDisabled" class="md-fab md-hue-1"> A </md-button>  {{q.a}}</p>
+    <p><md-button type="button" ng-click="qc.check('B')" ng-disabled="qc.buttonDisabled" class="md-fab md-hue-1"> B </md-button>  {{q.b}}</p>
+    <p><md-button type="button" ng-click="qc.check('C')" ng-disabled="qc.buttonDisabled" class="md-fab md-hue-1"> C </md-button>  {{q.c}}</p>
+    <p><md-button type="button" ng-click="qc.check('D')" ng-disabled="qc.buttonDisabled" class="md-fab md-hue-1"> D </md-button>  {{q.d}}</p>
     <p><em>Need a Hint?</em>  Learn More in {{q.source}} at {{q.page}}.</p>
     <p ng-if="qc.showMessage===true" id="answer">{{qc.message}}</p>
   </div>
 </div>
 <md-button class="md-accent md-raised" ng-click="qc.next()">Next Question</md-button>
-
-
-<!-- Question: {{qc.quizQ.question}} -->
-<!-- <button ng-click="qc.choose(q)">Choose</button> -->
