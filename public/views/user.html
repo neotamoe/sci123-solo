@@ -10,7 +10,7 @@
   <p>Select a chapter or choose a topic.  You will get five questions to test your Science of Food and Cooking knowledge.  Each question will have a chapter and page # if you want to learn more.</p>
 </div>
   <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-    <a href="#/quiz"><md-button class="md-raised md-primary" ng-click="uc.getQuestions(1)">Chapter 1: Milk and Dairy Products</md-button></a>
+      <a href="#/quiz/1"><md-button class="md-raised md-primary">Chapter 1: Milk and Dairy Products</md-button></a>
     <a href="#/quiz"><md-button class="md-raised md-primary" ng-click="uc.getQuestions(2)">Chapter 2: Eggs</md-button></a>
     <a href="#/quiz"><md-button class="md-raised md-primary" ng-click="uc.getQuestions(3)">Chapter 3: Meat</md-button></a>
     <a href="#/quiz"><md-button class="md-raised md-primary" ng-click="uc.getQuestions(4)">Chapter 4: Fish and Shellfish</md-button></a>
@@ -28,3 +28,36 @@
     <a href="#/quiz"><md-button class="md-raised md-primary" ng-click="uc.getQuestions(16)">Appendix</md-button></a>
     <a href="#/quiz"><md-button class="md-raised md-primary" ng-click="uc.getQuestions(17)">Measurement</md-button></a>
   </section>
+
+<!-- https://stackoverflow.com/questions/30562262/angularjs-display-one-specific-object-in-an-array-at-a-time -->
+  <!-- <div ng-repeat="quizQ in uc.fiveData">
+    <button type="button" ng-click="setSelectedItem(quizQ)">Show Question</button>
+
+      <div ng-show="selectedItem == quizQ">
+           <h1>{{quizQ.question}}</h1>
+          <p>A: {{quizQ.a}}</p>
+      </div>
+  </div> -->
+
+
+
+  <!-- i want this on a separate page! -->
+  <!-- <div ng-repeat="item in uc.fiveData">
+    <h2>{{item.question}}</h2>
+      <p><button type="button" name="button">A</button>{{item.a}}</p>
+      <p><button type="button" name="button">B</button>{{item.b}}</p>
+      <p><button type="button" name="button">C</button>{{item.c}}</p>
+      <p><button type="button" name="button">D</button>{{item.d}}</p>
+      <p>This would be hidden until selection is made...Answer: {{item.answer}}</p>
+      <p>Learn More: {{item.source}} on page {{item.page}}</p>
+  </div> -->
+
+<!-- i don't think this is the route to go -->
+<!-- <h2>{{uc.quizQs.question}}</h2>
+<p><button type="button" name="button">A</button>{{uc.quizQs.a}}</p>
+<p><button type="button" name="button">B</button>{{uc.quizQs.b}}</p>
+<p><button type="button" name="button">C</button>{{uc.quizQs.c}}</p>
+<p><button type="button" name="button">D</button>{{uc.quizQs.d}}</p>
+<p>This would be hidden until selection is made...Answer: {{uc.quizQs.answer}}</p>
+<p>Learn More: {{uc.quizQs.source}} on page {{uc.quizQs.page}}</p>
+<button type="button" name="button" ng-click="uc.setNextQuestion()">Next Question</button> -->

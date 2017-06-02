@@ -20,16 +20,16 @@
 	- decide first draft [x] colors and fonts
 	- checkbox for keyword/tags functional (but not yet displaying)
 	- ??separate landing page into 2 views for question selection via checkbox or chapter 
-	- add student/user "how to use app" paragraph (including recommended browser?)
+	- [x]add student/user "how to use app" paragraph
 * [x] Passport authentication and register/login pages functional - 6/2/17 
 	- [x] utilize code base for authentication 5/30
-	- [ ] register page, 5/30 function, needs styling
-	- [ ] login page, 5/30 funtional, needs styling
+	- [/] register page, 5/30 function, needs styling
+	- [/] login page, 5/30 funtional, needs styling
 	- [x] ensure links between login and register pages works
 * [ ] Quiz questions pulling from database (including front end formatting and search functionality) - 6/5/17 
 	- basic template for question display
 	- display to be mobile-responsive
-	- random number generator to display 5 random questions to display upon chapter or keyword selection
+	- [x]random number generator to display 5 random questions to display upon chapter or keyword selection
 	- ensure checkboxes pulling questions and displaying
 * [ ] Complete admin page/view - 6/6/17   
 	- check admin email address

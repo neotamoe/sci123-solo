@@ -1,8 +1,10 @@
-myApp.controller('UserController', ['$http', '$location', 'questionsService', '$scope', function($http, $location, questionsService, $scope) {
+myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$routeParams', function($http, $location, questionsService, $routeParams) {
   // This happens after view/controller loads -- not ideal but it works for now.
   var vm = this;
 
   console.log('checking user');
+
+  vm.chapter = $routeParams.chapterid;
 
   // Upon load, check this user's session on the server
   $http.get('/user').then(function(response) {
@@ -24,24 +26,14 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', '$
     });
   };
 
-
-
-  vm.getQuestions = function(chapter){
-    questionsService.getQuestions(chapter).then(function(data){
+  vm.getQuestions = function(){
+    questionsService.getQuestions(vm.chapter).then(function(data){
       console.log('back from server with five random questions/data-->', data);
       vm.fiveData = data;
       console.log('vm.fiveData:', vm.fiveData);
-      // $scope.$apply()
     });
   };
-
-//stackoverflow.com/questions/30562262/angularjs-display-one-specific-object-in-an-array-at-a-time
-  // vm.setSelectedItem = function (item) {
-  //   vm.selectedItem = item;
-  // };
-
-
-
-
+  
+  vm.getQuestions();
 
 }]);  // end UserController
