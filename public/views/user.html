@@ -5,38 +5,41 @@
 <div class="container">
   <p><span><strong>Get started!</strong></span>  Select a chapter or choose a topic using the checkbox below.
     You will see five questions randomly selected to test your Science of Food and Cooking knowledge.  Each
-    question will have a chapter and page # if you want to learn more.  Chapters and appendix are from your text \"On Food and
-    Cooking: The Science and Lore of the Kitchen\" by Harold McGee.  Measurement is from your text
-  </p>
+    question will have a chapter and page # if you want to learn more.  Chapters and appendix are from your text "On Food and
+    Cooking: The Science and Lore of the Kitchen" by Harold McGee.  Measurement is the appendix from _____________.</p>
 </div>
-  <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-    <a href="#/quiz/1"><md-button class="md-raised md-accent">Chapter 1: Milk and Dairy Products</md-button></a>
-    <a href="#/quiz/2"><md-button class="md-raised md-accent">Chapter 2: Eggs</md-button></a>
-    <a href="#/quiz/3"><md-button class="md-raised md-accent">Chapter 3: Meat</md-button></a>
-    <a href="#/quiz/4"><md-button class="md-raised md-accent">Chapter 4: Fish and Shellfish</md-button></a>
-    <a href="#/quiz/5"><md-button class="md-raised md-accent">Chapter 5: Edible Plants: An Introduction to Fruits and Vegetables, Herbs and Spices</md-button></a>
-    <a href="#/quiz/6"><md-button class="md-raised md-accent">Chapter 6: A Survey of Common Vegetables</md-button></a>
-    <a href="#/quiz/7"><md-button class="md-raised md-accent">Chapter 7: A Survey of Common Fruits</md-button></a>
-    <a href="#/quiz/8"><md-button class="md-raised md-accent">Chapter 8: Flavorings from Plants: Herbs and Spices, Tea and Coffee</md-button></a>
-    <a href="#/quiz/9"><md-button class="md-raised md-accent">Chapter 9: Seeds: Grains, Legumes and Nuts</md-button></a>
-    <a href="#/quiz/10"><md-button class="md-raised md-accent">Chapter 10: Cereal Doughs and Batters: Bread, Cakes, Pastry, Pasta</md-button></a>
-    <a href="#/quiz/11"><md-button class="md-raised md-accent">Chapter 11: Sauces</md-button></a>
-    <a href="#/quiz/12"><md-button class="md-raised md-accent">Chapter 12: Sugars, Chocolate and Confectionary</md-button></a>
-    <a href="#/quiz/13"><md-button class="md-raised md-accent">Chapter 13: Wine, Beer and Distilled Spirits</md-button></a>
-    <a href="#/quiz/14"><md-button class="md-raised md-accent">Chapter 14: Cooking Methods and Utensil Materials</md-button></a>
-    <a href="#/quiz/15"><md-button class="md-raised md-accent">Chapter 15: The Four Basic Food Molecules</md-button></a>
-    <a href="#/quiz/16"><md-button class="md-raised md-accent">Appendix</md-button></a>
-    <a href="#/quiz/17"><md-button class="md-raised md-accent">Measurement</md-button></a>
-  </section>
 
-  <div class="md-padding checkbox container" ng-cloak="" style="min-height:270px">
-    <div layout="row" layout-wrap>
-      <div layout="column">
-        <div layout="row" layout-wrap flex>
-          <div flex="20" ng-repeat="item in uc.items track by $index">
-            <md-checkbox ng-checked="uc.exists(item, uc.selected)" ng-click="uc.toggle(item, uc.selected)">{{ item }}</md-checkbox>
-          </div>
+<div layout="row" layout-sm="column" flex layout-align="center center" layout-wrap>
+  <a href="#/quiz/1"><md-button class="md-raised md-accent">Chapter 1: Milk and Dairy Products</md-button></a>
+  <a href="#/quiz/2"><md-button class="md-raised md-accent">Chapter 2: Eggs</md-button></a>
+  <a href="#/quiz/3"><md-button class="md-raised md-accent">Chapter 3: Meat</md-button></a>
+  <a href="#/quiz/4"><md-button class="md-raised md-accent">Chapter 4: Fish and Shellfish</md-button></a>
+  <a href="#/quiz/5"><md-button class="md-raised md-accent">Chapter 5: Edible Plants: An Introduction to Fruits and Vegetables, Herbs and Spices</md-button></a>
+  <a href="#/quiz/6"><md-button class="md-raised md-accent">Chapter 6: A Survey of Common Vegetables</md-button></a>
+  <a href="#/quiz/7"><md-button class="md-raised md-accent">Chapter 7: A Survey of Common Fruits</md-button></a>
+  <a href="#/quiz/8"><md-button class="md-raised md-accent">Chapter 8: Flavorings from Plants: Herbs and Spices, Tea and Coffee</md-button></a>
+  <a href="#/quiz/9"><md-button class="md-raised md-accent">Chapter 9: Seeds: Grains, Legumes and Nuts</md-button></a>
+  <a href="#/quiz/10"><md-button class="md-raised md-accent">Chapter 10: Cereal Doughs and Batters: Bread, Cakes, Pastry, Pasta</md-button></a>
+  <a href="#/quiz/11"><md-button class="md-raised md-accent">Chapter 11: Sauces</md-button></a>
+  <a href="#/quiz/12"><md-button class="md-raised md-accent">Chapter 12: Sugars, Chocolate and Confectionary</md-button></a>
+  <a href="#/quiz/13"><md-button class="md-raised md-accent">Chapter 13: Wine, Beer and Distilled Spirits</md-button></a>
+  <a href="#/quiz/14"><md-button class="md-raised md-accent">Chapter 14: Cooking Methods and Utensil Materials</md-button></a>
+  <a href="#/quiz/15"><md-button class="md-raised md-accent">Chapter 15: The Four Basic Food Molecules</md-button></a>
+  <a href="#/quiz/16"><md-button class="md-raised md-accent">Appendix</md-button></a>
+  <a href="#/quiz/17"><md-button class="md-raised md-accent">Measurement</md-button></a>
+</div>
+<div class="md-padding checkbox container" ng-cloak="">
+  <div layout="row" layout-wrap>
+    <div layout="column">
+      <div layout="row" layout-wrap flex>
+        <div flex-offset="5" flex="20" ng-repeat="item in uc.items track by $index">
+          <md-checkbox value="{{item}}" ng-checked="uc.exists(item, uc.selected)" ng-click="uc.toggle(item, uc.selected)">{{ item }}</md-checkbox>
         </div>
       </div>
     </div>
   </div>
+</div>
+<div class="container">
+  <code style="display: block; padding: 8px;">{{uc.selected | json}}</code>
+  <a href="#/tagsbox/{{uc.selected}}"><md-button class="md-raised md-accent">Go!</md-button></a>
+</div>

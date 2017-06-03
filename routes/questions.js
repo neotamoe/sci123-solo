@@ -23,6 +23,23 @@ router.get('/:chapter', function(req, res) {
   }
 });
 
+// router.get('/:selected', function(req, res) {
+//   console.log(' in get route for selected-->', req.params.selected);
+//   // check if logged in
+//   if(req.isAuthenticated()) {
+//     // send back user object from database
+//     console.log('still logged in');
+//     questionsModel.aggregate([{$match: {display:'true', chapter:16}},{$sample:{size:5}}]).then(function(data){
+//       console.log('data for tags which is actually chapter 16-->', data);
+//       res.send(data);
+//     });
+//   } else {
+//     // failure best handled on the server. do redirect here.
+//     console.log('not logged in');
+//     res.sendStatus(403);
+//   }
+// });
+
 router.get('/', function(req, res) {
   console.log(' in get route for tags');
   // check if logged in

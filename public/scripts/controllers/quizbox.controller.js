@@ -1,9 +1,23 @@
-myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$routeParams', function($http, $location, questionsService, $routeParams) {
+myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'questionsService', '$routeParams', function($scope, $http, $location, questionsService, $routeParams) {
   var vm = this;
-  console.log('QuizController loaded');
+  console.log('QuizBoxController loaded');
   console.log('checking user');
 
-  vm.chapter = $routeParams.chapterid;
+  $scope.$on('$routeChangeSuccess', function() {
+    vm.selected = $routeParams.selected;
+    console.log('inside $routeChangeSuccess--> vm.selected:', vm.selected);
+    vm.getTagsQuestions = function(){
+      console.log('in getTagsQuestions: vm.selected:', vm.selected);
+      questionsService.getTagsQuestions(vm.selected).then(function(data){
+        console.log('back from server with TAGS five random questions/data-->', data);
+        vm.fiveData = data;
+        console.log('vm.fiveData:', vm.fiveData);
+        return vm.fiveData;
+      });
+    }();
+    });
+  // vm.selected = $routeParams.selected;
+  console.log('outside $routeChangeSuccess--> vm.selected:', vm.selected);
 
   // Upon load, check this user's session on the server
   $http.get('/user').then(function(response) {
@@ -11,7 +25,7 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
       if(response.data.email) {
           // user has a current session on the server
           vm.userName = response.data.firstName;
-          console.log('from QuizController: still logged in as User Data: ', vm.userName);
+          console.log('User Data: ', vm.userName);
       } else {
           // user has no session, bounce them back to the login page
           $location.path("/home");
@@ -25,27 +39,16 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
     });
   };
 
-  vm.getQuestions = function(){
-    questionsService.getQuestions(vm.chapter).then(function(data){
-      console.log('back from server with five random questions/data-->', data);
+  vm.getTagsQuestions = function(){
+    console.log('in getTagsQuestions: vm.selected:', vm.selected);
+    questionsService.getTagsQuestions(vm.selected).then(function(data){
+      console.log('back from server with TAGS five random questions/data-->', data);
       vm.fiveData = data;
       console.log('vm.fiveData:', vm.fiveData);
       return vm.fiveData;
     });
   };
 
-  vm.getQuestions();
-
-  // vm.getTagsQuestions = function(){
-  //   console.log('vm.selected:', vm.selected);
-  //   questionsService.getTagsQuestions(vm.selected).then(function(data){
-  //     console.log('back from server with five random questions/data-->', data);
-  //     vm.fiveData = data;
-  //     console.log('vm.fiveData:', vm.fiveData);
-  //     return vm.fiveData;
-  //   });
-  // };
-  //
   // vm.getTagsQuestions();
 
   vm.fiveData_index = 0;
@@ -78,4 +81,4 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
   };
 
 
-}]);  // end QuizController
+}]);  // end QuizBoxController

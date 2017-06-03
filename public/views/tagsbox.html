@@ -1,0 +1,16 @@
+<div class="container">
+    <md-button id="logoutbtn" class="md-raised md-accent" ng-click="qbc.logout()">Log Out</md-button>
+</div>
+
+<div ng-repeat="q in qbc.fiveData" class="container">
+  <div ng-if="qbc.fiveData_index == $index">
+    <h2>{{q.question}}</h2>
+    <p><md-button type="button" ng-click="qbc.check('A')" ng-disabled="qbc.buttonDisabled" class="md-fab md-hue-1"> A </md-button>  {{q.a}}</p>
+    <p><md-button type="button" ng-click="qbc.check('B')" ng-disabled="qbc.buttonDisabled" class="md-fab md-hue-1"> B </md-button>  {{q.b}}</p>
+    <p><md-button type="button" ng-click="qbc.check('C')" ng-disabled="qbc.buttonDisabled" class="md-fab md-hue-1"> C </md-button>  {{q.c}}</p>
+    <p><md-button type="button" ng-click="qbc.check('D')" ng-disabled="qbc.buttonDisabled" class="md-fab md-hue-1"> D </md-button>  {{q.d}}</p>
+    <p><em>Need a Hint?</em>  Learn More in {{q.source}} at {{q.page}}.</p>
+    <p ng-if="qbc.showMessage===true" id="answer">{{qbc.message}}</p>
+    <md-button class="md-accent md-raised" ng-click="qbc.next()">Next Question</md-button>
+  </div>
+</div>
