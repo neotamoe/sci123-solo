@@ -36,7 +36,7 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', '$
   vm.getTags();
 
   vm.items = [];
-  vm.selected = [];
+  vm.selected=[];
 
   vm.toggle = function (item, list) {
     var idx = list.indexOf(item);
