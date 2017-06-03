@@ -3,28 +3,27 @@ myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'question
   console.log('QuizBoxController loaded');
   console.log('checking user');
 
-// this works, but trying to do without using $scope
-  // $scope.$on('$routeChangeSuccess', function() {
-  //   vm.selected = $routeParams.selected;
-  //   console.log('inside $routeChangeSuccess--> vm.selected:', vm.selected);
-  //   vm.getTagsQuestions = function(){
-  //     console.log('in getTagsQuestions: vm.selected:', vm.selected);
-  //     questionsService.getTagsQuestions(vm.selected).then(function(data){
-  //       console.log('back from server with TAGS five random questions/data-->', data);
-  //       vm.fiveData = data;
-  //       console.log('vm.fiveData:', vm.fiveData);
-  //       return vm.fiveData;
-  //     });
-  //   }();
-  //   });
-
   console.log('$route.current.params-->', $route.current.params);
-  vm.selected = $route.current.params.selected;
-  console.log('outside $routeChangeSuccess--> vm.selected:', vm.selected);
+  // vm.selected = $route.current.params.selected;
+  // console.log('outside $routeChangeSuccess--> vm.selected:', vm.selected);
+// this will work when only searching for a single tag
+  // vm.getTagsQuestions = function(){
+  //   // console.log('in getTagsQuestions: vm.selected:', vm.selected);
+  //   questionsService.getTagsQuestions(vm.selected).then(function(data){
+  //     console.log('back from server with TAGS five random questions/data-->', data);
+  //     vm.fiveData = data;
+  //     console.log('vm.fiveData:', vm.fiveData);
+  //     return vm.fiveData;
+  //   });
+  // };
+
+  // vm.selected = $route.current.params.selected;
+  // vm.selected2 = $route.current.params.selected2;
+  // vm.selected3 = $route.current.params.selected3;
 
   vm.getTagsQuestions = function(){
-    console.log('in getTagsQuestions: vm.selected:', vm.selected);
-    questionsService.getTagsQuestions(vm.selected).then(function(data){
+    // console.log('in getTagsQuestions: vm.selected:', vm.selected);
+    questionsService.getTagsQuestions($route.current.params).then(function(data){
       console.log('back from server with TAGS five random questions/data-->', data);
       vm.fiveData = data;
       console.log('vm.fiveData:', vm.fiveData);

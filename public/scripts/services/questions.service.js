@@ -1,18 +1,29 @@
-myApp.service('questionsService', function($http,$routeParams){
+myApp.service('questionsService', function($http,$routeParams,$route){
 
   var self = this;
 
-  self.getTagsQuestions = function(tag){
-    console.log('getQuestions from selected tags-->', $routeParams.selected);
+  // self.getTagsQuestions = function(tag){
+  //   console.log('getQuestions from selected tags-->', $routeParams.selected);
+  //   tag=$routeParams.selected;
+  //   console.log('tag:', $routeParams.selected);
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/box/'+$routeParams.selected,
+  //   }).then(function(response){
+  //     return response.data;
+  //   });
+  // };
+
+  self.getTagsQuestions = function(tag,tag2,tag3){
     tag=$routeParams.selected;
-    console.log('tag:', $routeParams.selected);
+    tag2=$routeParams.selected2;
+    tag3=$routeParams.selected3;
+
+    console.log('getQuestions with $routeParams-->', $routeParams);
+    console.log('tags: 1:'+ tag + ' 2: '+ tag2 + ' 3: '+  tag3);
     return $http({
       method: 'GET',
-      url: '/box/'+$routeParams.selected,
-      // params: {
-      //   tag: $routeParams.selected,
-      //   display: true,
-      // }
+      url: '/box/'+tag+'/'+tag2+'/'+tag3
     }).then(function(response){
       return response.data;
     });

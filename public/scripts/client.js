@@ -16,7 +16,7 @@ myApp.config(['$routeProvider', '$locationProvider','$mdThemingProvider', functi
       templateUrl: '/views/user.html',
       controller: "UserController as uc"
     })
-    .when('/tagsbox/:selected', {
+    .when('/tagsbox/:selected/:selected2?/:selected3?', {
       // $routeParams
       templateUrl: '/views/tagsbox.html',
       controller: "QuizBoxController as qbc"
