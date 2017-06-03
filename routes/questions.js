@@ -19,8 +19,7 @@ router.get('/:chapter', function(req, res) {
   } else {
     // failure best handled on the server. do redirect here.
     console.log('not logged in');
-    // should probably be res.sendStatus(403) and handled client-side, esp if this is an AJAX request (which is likely with AngularJS)
-    res.send(false);
+    res.sendStatus(403);
   }
 });
 
@@ -30,9 +29,6 @@ router.get('/', function(req, res) {
   if(req.isAuthenticated()) {
     // send back user object from database
     console.log('still logged in');
-    // questionsModel.aggregate([{$match: {display:'true', chapter:currentChapter}},{$sample:{size:5}}]).then(function(data){
-    // questionsModel.find({tags:{$exists:true}}).then(function(data){
-    // questionsModel.aggregate([{$project: {$exists:{tags:'true'}}}]).then(function(data){
     questionsModel.distinct('tags').sort().then( function(data) {
       console.log('data for tags-->', data);
       res.send(data);
@@ -40,8 +36,7 @@ router.get('/', function(req, res) {
   } else {
     // failure best handled on the server. do redirect here.
     console.log('not logged in');
-    // should probably be res.sendStatus(403) and handled client-side, esp if this is an AJAX request (which is likely with AngularJS)
-    res.send(false);
+    res.sendStatus(403);
   }
 });
 

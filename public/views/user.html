@@ -1,13 +1,13 @@
 <div class="container">
-    <h1>Welcome, {{uc.userName}}!</h1>
-    <md-button class="md-raised md-accent" ng-click="uc.logout()">Log Out</md-button>
+  <h3 id="welcome">Welcome, {{uc.userName}}!</h3>
+  <md-button id="logoutbtn" class="md-raised md-accent" ng-click="uc.logout()">Log Out</md-button>
 </div>
-<br>
-<hr>
-<br>
-<div>
-  <h3>Get started!</h3>
-  <p>Select a chapter or choose a topic.  You will get five questions to test your Science of Food and Cooking knowledge.  Each question will have a chapter and page # if you want to learn more.</p>
+<div class="container">
+  <p><span><strong>Get started!</strong></span>  Select a chapter or choose a topic using the checkbox below.
+    You will see five questions randomly selected to test your Science of Food and Cooking knowledge.  Each
+    question will have a chapter and page # if you want to learn more.  Chapters and appendix are from your text \"On Food and
+    Cooking: The Science and Lore of the Kitchen\" by Harold McGee.  Measurement is from your text
+  </p>
 </div>
   <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
     <a href="#/quiz/1"><md-button class="md-raised md-accent">Chapter 1: Milk and Dairy Products</md-button></a>
@@ -29,14 +29,12 @@
     <a href="#/quiz/17"><md-button class="md-raised md-accent">Measurement</md-button></a>
   </section>
 
-  <div class="md-padding checkbox" ng-cloak="" style="min-height:270px">
-    <div layout="row" layout-wrap="">
+  <div class="md-padding checkbox container" ng-cloak="" style="min-height:270px">
+    <div layout="row" layout-wrap>
       <div layout="column">
         <div layout="row" layout-wrap flex>
-          <div flex="100" ng-repeat="item in uc.items track by $index">
-            <md-checkbox ng-checked="uc.exists(item, uc.selected)" ng-click="uc.toggle(item, uc.selected)">
-              {{ item }} <span ng-if="uc.exists(item, uc.selected)">selected</span>
-            </md-checkbox>
+          <div flex="20" ng-repeat="item in uc.items track by $index">
+            <md-checkbox ng-checked="uc.exists(item, uc.selected)" ng-click="uc.toggle(item, uc.selected)">{{ item }}</md-checkbox>
           </div>
         </div>
       </div>

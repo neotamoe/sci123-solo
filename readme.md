@@ -17,10 +17,10 @@
 	- import into database -  in progress (1/7 done 5/30)
 * [ ] Complete landing page and connect to database - 5/31/17 
 	- [x] basic style setup displaying chapter titles
-	- decide first draft [x] colors and fonts
-	- checkbox for keyword/tags functional (but not yet displaying)
-	- ??separate landing page into 2 views for question selection via checkbox or chapter 
-	- [x]add student/user "how to use app" paragraph
+	- [x] decide first draft colors
+	- [ ] decide first draft fonts
+	- [x] checkbox for keyword/tags functional (but not yet displaying) 
+	- [x] add student/user "how to use app" paragraph
 * [x] Passport authentication and register/login pages functional - 6/2/17 
 	- [x] utilize code base for authentication 5/30
 	- [/] register page, 5/30 function, needs styling

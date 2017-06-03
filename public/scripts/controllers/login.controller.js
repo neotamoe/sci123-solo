@@ -23,11 +23,11 @@ myApp.controller('LoginController', ['$http', '$location', function($http, $loca
             $location.path('/user');
           } else {
             console.log('failure: ', response);
-            vm.message = "Wrong!!";
+            vm.message = "Incorrect email and/or password.  Try again.";
           }
         });
       }
-    }
+    };
 
     vm.registerUser = function() {
       if(vm.user.email == '' || vm.user.password == '' || vm.user.firstName=='') {
@@ -40,8 +40,8 @@ myApp.controller('LoginController', ['$http', '$location', function($http, $loca
         },
         function(response) {
           console.log('error');
-          vm.message = "Please try again."
+          vm.message = "Please try again.";
         });
       }
-    }
+    };
 }]);

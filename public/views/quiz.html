@@ -1,9 +1,8 @@
-<div>
-    <md-button class="md-raised md-accent" ng-click="qc.logout()">Log Out</md-button>
+<div class="container">
+    <md-button id="logoutbtn" class="md-raised md-accent" ng-click="qc.logout()">Log Out</md-button>
 </div>
-<hr />
 
-<div ng-repeat="q in qc.fiveData">
+<div ng-repeat="q in qc.fiveData" class="container">
   <div ng-if="qc.fiveData_index == $index">
     <h2>{{q.question}}</h2>
     <p><md-button type="button" ng-click="qc.check('A')" ng-disabled="qc.buttonDisabled" class="md-fab md-hue-1"> A </md-button>  {{q.a}}</p>
@@ -12,6 +11,6 @@
     <p><md-button type="button" ng-click="qc.check('D')" ng-disabled="qc.buttonDisabled" class="md-fab md-hue-1"> D </md-button>  {{q.d}}</p>
     <p><em>Need a Hint?</em>  Learn More in {{q.source}} at {{q.page}}.</p>
     <p ng-if="qc.showMessage===true" id="answer">{{qc.message}}</p>
+    <md-button class="md-accent md-raised" ng-click="qc.next()">Next Question</md-button>
   </div>
 </div>
-<md-button class="md-accent md-raised" ng-click="qc.next()">Next Question</md-button>
