@@ -33,7 +33,7 @@
     <div layout="column">
       <div layout="row" layout-wrap flex>
         <div flex-offset="5" flex="20" ng-repeat="item in uc.items track by $index">
-          <md-checkbox value="{{item}}" ng-checked="uc.exists(item, uc.selected)" ng-click="uc.toggle(item, uc.selected)">{{ item }}</md-checkbox>
+          <md-checkbox ng-model="checkmark" ng-change="uc.checkChanged(item)" ng-disabled="uc.checked==uc.limit && !checkmark" ng-checked="uc.exists(item, uc.selected)" ng-click="uc.toggle(item, uc.selected)">{{ item }}</md-checkbox>
         </div>
       </div>
     </div>
@@ -41,6 +41,5 @@
 </div>
 <div class="container">
   <code style="display: block; padding: 8px;">{{uc.selected | json}}</code>
-  <p>{{}}</p>
   <a href="#/tagsbox/{{uc.selected[0]}}/{{uc.selected[1]}}/{{uc.selected[2]}}"><md-button class="md-raised md-accent">Go!</md-button></a>
 </div>

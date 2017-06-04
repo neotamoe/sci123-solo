@@ -17,9 +17,6 @@ myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'question
   //   });
   // };
 
-  // vm.selected = $route.current.params.selected;
-  // vm.selected2 = $route.current.params.selected2;
-  // vm.selected3 = $route.current.params.selected3;
 
   vm.getTagsQuestions = function(){
     // console.log('in getTagsQuestions: vm.selected:', vm.selected);
