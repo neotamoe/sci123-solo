@@ -16,32 +16,32 @@
 	- export in csv format - in progress (1/7 done 5/30)
 	- import into database -  in progress (1/7 done 5/30)
 * [ ] Complete landing page and connect to database - 5/31/17 
-	- [x] basic style setup displaying chapter titles
-	- [x] decide first draft colors
-	- [ ] decide first draft fonts
-	- [x] checkbox for keyword/tags functional (but not yet displaying) 
-	- [x] add student/user "how to use app" paragraph
+	- [x] basic style setup displaying chapter titles 6/1
+	- [x] decide first draft colors 5/31
+	- [x] decide first draft fonts 6/2
+	- [x] checkbox for keyword/tags functional (but not yet displaying)  6/2
+	- [x] add student/user "how to use app" paragraph 6/2
 * [x] Passport authentication and register/login pages functional - 6/2/17 
 	- [x] utilize code base for authentication 5/30
-	- [/] register page, 5/30 function, needs styling
+	- [/] register page, 5/30 functional, needs styling
 	- [/] login page, 5/30 funtional, needs styling
-	- [x] ensure links between login and register pages works
+	- [x] ensure links between login and register pages works 5/30
 * [/] Quiz questions pulling from database (including front end formatting and search functionality) - 6/5/17 
-	- [x]basic template for question display
-	- display to be mobile-responsive
-	- [x]random number generator to display 5 random questions to display upon chapter or keyword selection
-	- ensure checkboxes pulling questions and displaying
+	- [x]basic template for question display 6/2
+	- display to be mobile-responsive 
+	- [x]random number generator to display 5 random questions to display upon chapter or keyword selection 6/1
+	- [x]ensure checkboxes pulling questions and displaying 6/3
 * [ ] Complete admin page/view - 6/6/17   
 	- check admin email address
 	- [x]make sure schema accounts for admin approval/denial of question
 * [ ] Nodemailer functional - 6/7/17
 	- will need help here!
 * [ ] Student/user able to submit a question - 6/8/17  
-	- checkboxes working for submission
-	- basic input styling
+	- [ ] checkboxes working for submission
+	- [ ] basic input styling
 * [ ] Administrator able to accept or decline student-submitted question for inclusion into database - 6/9/17    
-	- approve/deny buttons working (ensure status in database changes upon click)
-	- administrator able to edit fields of submitted question
+	- [ ] approve/deny buttons working (ensure status in database changes upon click)
+	- [ ] administrator able to edit fields of submitted question
 * [ ] Deploy to Heroku - 6/12/17
 
 ##Project Overview
