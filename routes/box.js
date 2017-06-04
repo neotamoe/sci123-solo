@@ -28,7 +28,7 @@ router.get('/:selected/:selected2/:selected3', function(req, res) {
   if(req.isAuthenticated()) {
     // send back user object from database
     console.log('still logged in');
-    questionsModel.aggregate([{$match: {tags:{$in:[req.params.selected,req.params.selected2,req.params.selected3]}}},{$sample:{size:5}}]).then(function(data){
+    questionsModel.aggregate([{$match: {display:'true', tags:{$in:[req.params.selected,req.params.selected2,req.params.selected3]}}},{$sample:{size:5}}]).then(function(data){
       console.log('data for tags for '+req.params.selected + req.params.selected2 + req.params.selected3 +' -->', data);
       res.send(data);
     });

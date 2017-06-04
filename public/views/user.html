@@ -3,7 +3,7 @@
   <md-button id="logoutbtn" class="md-raised md-accent" ng-click="uc.logout()">Log Out</md-button>
 </div>
 <div class="container">
-  <p><span><strong>Get started!</strong></span>  Select a chapter or choose a topic using the checkbox below.
+  <p><span><strong>Get started!</strong></span>  Select a chapter or choose up to three topics using the checkboxes below.
     You will see five questions randomly selected to test your Science of Food and Cooking knowledge.  Each
     question will have a chapter and page # if you want to learn more.  Chapters and appendix are from your text "On Food and
     Cooking: The Science and Lore of the Kitchen" by Harold McGee.  Measurement is the appendix from _____________.</p>
@@ -39,6 +39,7 @@
     </div>
   </div>
 </div>
+<!-- remove the code line before deployment so it doesn't show on DOM-->
 <div class="container">
   <code style="display: block; padding: 8px;">{{uc.selected | json}}</code>
   <a href="#/tagsbox/{{uc.selected[0]}}/{{uc.selected[1]}}/{{uc.selected[2]}}"><md-button class="md-raised md-accent">Go!</md-button></a>

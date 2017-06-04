@@ -2,6 +2,14 @@
 augsburg color: #650a34
 */
 
+#header{
+  background-image: url('tomatoes.jpg');
+  background-repeat: no-repeat;
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+}
+
 #logoutbtn{
   display: inline;
 }

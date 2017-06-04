@@ -7,14 +7,14 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', '$
   // Upon load, check this user's session on the server
   $http.get('/user').then(function(response) {
     // username is actually email address
-      if(response.data.email) {
-          // user has a current session on the server
-          vm.userName = response.data.firstName;
-          console.log('User Data: ', vm.userName);
-      } else {
-          // user has no session, bounce them back to the login page
-          $location.path("/home");
-      }
+    if(response.data.email) {
+      // user has a current session on the server
+      vm.userName = response.data.firstName;
+      console.log('User Data: ', vm.userName);
+    } else {
+      // user has no session, bounce them back to the login page
+      $location.path("/home");
+    }
   });
 
   vm.logout = function() {

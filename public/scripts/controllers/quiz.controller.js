@@ -8,14 +8,14 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
   // Upon load, check this user's session on the server
   $http.get('/user').then(function(response) {
     // username is actually email address
-      if(response.data.email) {
-          // user has a current session on the server
-          vm.userName = response.data.firstName;
-          console.log('from QuizController: still logged in as User Data: ', vm.userName);
-      } else {
-          // user has no session, bounce them back to the login page
-          $location.path("/home");
-      }
+    if(response.data.email) {
+      // user has a current session on the server
+      vm.userName = response.data.firstName;
+      console.log('from QuizController: still logged in as User Data: ', vm.userName);
+    } else {
+      // user has no session, bounce them back to the login page
+      $location.path("/home");
+    }
   });
 
   vm.logout = function() {
@@ -36,28 +36,16 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
 
   vm.getQuestions();
 
-  // vm.getTagsQuestions = function(){
-  //   console.log('vm.selected:', vm.selected);
-  //   questionsService.getTagsQuestions(vm.selected).then(function(data){
-  //     console.log('back from server with five random questions/data-->', data);
-  //     vm.fiveData = data;
-  //     console.log('vm.fiveData:', vm.fiveData);
-  //     return vm.fiveData;
-  //   });
-  // };
-  //
-  // vm.getTagsQuestions();
-
   vm.fiveData_index = 0;
   vm.showMessage = false;
   vm.buttonDisabled = false;
-  // vm.quizQ = {};
 
   vm.next = function () {
     vm.showMessage = false;
     vm.buttonDisabled = false;
     if (vm.fiveData_index >= vm.fiveData.length - 1) {
-      vm.fiveData_index = 0;
+      // vm.fiveData_index = 0;
+      $location.path("/endquiz");
     } else {
       vm.fiveData_index++;
     }
@@ -76,6 +64,5 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
       vm.message = 'Incorrect.  The correct answer is ' + vm.fiveData[vm.fiveData_index].answer + '.';
     }
   };
-
 
 }]);  // end QuizController

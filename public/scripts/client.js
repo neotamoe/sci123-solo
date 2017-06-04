@@ -26,6 +26,10 @@ myApp.config(['$routeProvider', '$locationProvider','$mdThemingProvider', functi
       templateUrl: '/views/quiz.html',
       controller: "QuizController as qc"
     })
+    .when('/endquiz', {
+      templateUrl: '/views/endquiz.html',
+      controller: "UserController as uc"
+    })
     .otherwise({
       redirectTo: '/home'
     });

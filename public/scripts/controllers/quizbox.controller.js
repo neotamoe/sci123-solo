@@ -71,7 +71,8 @@ myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'question
     vm.showMessage = false;
     vm.buttonDisabled = false;
     if (vm.fiveData_index >= vm.fiveData.length - 1) {
-      vm.fiveData_index = 0;
+      // vm.fiveData_index = 0;
+      $location.path("/endquiz");
     } else {
       vm.fiveData_index++;
     }
