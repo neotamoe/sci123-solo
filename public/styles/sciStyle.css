@@ -32,6 +32,20 @@ body{
     text-align: center;
 }
 
+label{
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 80px;
+  text-align: left;
+  margin-bottom: 5px; 
+}
+
+input {
+  display: inline-block;
+  float: left;
+}
+
 .instructions {
     height: 100px;
 }
