@@ -27,10 +27,11 @@
 	- [/] login page, 5/30 funtional, needs styling
 	- [x] ensure links between login and register pages works 5/30
 * [/] Quiz questions pulling from database (including front end formatting and search functionality) - 6/5/17 
-	- [x]basic template for question display 6/2
+	- [x] basic template for question display 6/2
 	- display to be mobile-responsive 
-	- [x]random number generator to display 5 random questions to display upon chapter or keyword selection 6/1
-	- [x]ensure checkboxes pulling questions and displaying 6/3
+	- [x] random number generator to display 5 random questions to display upon chapter or keyword selection 6/1
+	- [x] ensure checkboxes pulling questions and displaying 6/3
+	- [ ] points calculating
 * [ ] Complete admin page/view - 6/6/17   
 	- check admin email address
 	- [x]make sure schema accounts for admin approval/denial of question
