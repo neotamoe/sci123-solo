@@ -38,12 +38,13 @@ label{
   clear: left;
   width: 80px;
   text-align: left;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 input {
   display: inline-block;
   float: left;
+  width: 250px;
 }
 
 .instructions {
