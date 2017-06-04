@@ -35,6 +35,10 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', '$
 
   vm.getTags();
 
+  vm.counter = function(){
+    return questionsService.getCount();
+  };
+
   vm.items = [];
   vm.selected=[];
 

@@ -12,6 +12,7 @@ augsburg color: #650a34
 
 #logoutbtn{
   display: inline;
+  margin-left: 25px;
 }
 h1,h2,h3{
 
@@ -20,6 +21,10 @@ h1,h2,h3{
 
 body{
   font-family: 'Oswald', sans-serif;
+}
+
+#points{
+  margin-left: 25px;
 }
 
 #welcome{

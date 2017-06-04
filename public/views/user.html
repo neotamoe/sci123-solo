@@ -1,12 +1,16 @@
 <div class="container">
   <h3 id="welcome">Welcome, {{uc.userName}}!</h3>
   <md-button id="logoutbtn" class="md-raised md-accent" ng-click="uc.logout()">Log Out</md-button>
+  <span id="points">Points: {{uc.counter()}}</span>
 </div>
 <div class="container">
   <p><span><strong>Get started!</strong></span>  Select a chapter or choose up to three topics using the checkboxes below.
     You will see five questions randomly selected to test your Science of Food and Cooking knowledge.  Each
     question will have a chapter and page # if you want to learn more.  Chapters and appendix are from your text "On Food and
     Cooking: The Science and Lore of the Kitchen" by Harold McGee.  Measurement is the appendix from _____________.</p>
+  <div class="container">
+    <p><span><strong>Search by Chapter:</strong></span></p>
+  </div>
 </div>
 
 <div layout="row" layout-sm="column" flex layout-align="center center" layout-wrap>
@@ -29,6 +33,7 @@
   <a href="#/quiz/17"><md-button class="md-raised md-accent">Measurement</md-button></a>
 </div>
 <div class="md-padding checkbox container" ng-cloak="">
+  <p><span><strong>Search by Topic:</strong></span></p>
   <div layout="row" layout-wrap>
     <div layout="column">
       <div layout="row" layout-wrap flex>

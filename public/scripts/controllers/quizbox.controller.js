@@ -17,6 +17,9 @@ myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'question
   //   });
   // };
 
+  vm.counter = function(){
+    return questionsService.getCount();
+  };
 
   vm.getTagsQuestions = function(){
     // console.log('in getTagsQuestions: vm.selected:', vm.selected);
@@ -85,6 +88,8 @@ myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'question
       vm.showMessage = true;
       vm.buttonDisabled=true;
       vm.message = 'Correct!';
+      questionsService.setCount();
+      questionsService.getCount();
     } else{
       vm.showMessage = true;
       vm.buttonDisabled=true;

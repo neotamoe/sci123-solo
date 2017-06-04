@@ -36,6 +36,10 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
 
   vm.getQuestions();
 
+  vm.counter = function(){
+    return questionsService.getCount();
+  };
+
   vm.fiveData_index = 0;
   vm.showMessage = false;
   vm.buttonDisabled = false;
@@ -58,6 +62,8 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
       vm.showMessage = true;
       vm.buttonDisabled=true;
       vm.message = 'Correct!';
+      questionsService.setCount();
+      questionsService.getCount();
     } else{
       vm.showMessage = true;
       vm.buttonDisabled=true;

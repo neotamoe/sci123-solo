@@ -14,6 +14,16 @@ myApp.service('questionsService', function($http,$routeParams,$route){
   //   });
   // };
 
+  var count = 0;
+
+  self.getCount = function(){
+    return count;
+  };  // end getCount
+
+  self.setCount = function(){
+    count++;
+  };  // end setCount
+
   self.getTagsQuestions = function(tag,tag2,tag3){
     tag=$routeParams.selected;
     tag2=$routeParams.selected2;
@@ -38,8 +48,6 @@ myApp.service('questionsService', function($http,$routeParams,$route){
       return response.data;
     });
   };
-
-
 
   self.getTags = function(){
     console.log('get tags from all questions');
