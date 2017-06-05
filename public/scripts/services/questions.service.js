@@ -2,23 +2,25 @@ myApp.service('questionsService', function($http,$routeParams,$route){
 
   var self = this;
 
-  // self.getTagsQuestions = function(tag){
-  //   console.log('getQuestions from selected tags-->', $routeParams.selected);
-  //   tag=$routeParams.selected;
-  //   console.log('tag:', $routeParams.selected);
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/box/'+$routeParams.selected,
-  //   }).then(function(response){
-  //     return response.data;
-  //   });
-  // };
-
   var count = 0;
 
+  // self.getCount = function(userEmail){
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/points',
+  //     params: {
+  //       email: userEmail
+  //     }
+  //   }).then(function(response){
+  //     console.log('getCount response.data = ', response.data);
+  //     count = response.data.points;
+  //     return count;
+  //   });
+  // };  // end getCount
+  
   self.getCount = function(){
     return count;
-  };  // end getCount
+  };
 
   self.setCount = function(){
     count++;
@@ -28,7 +30,6 @@ myApp.service('questionsService', function($http,$routeParams,$route){
     tag=$routeParams.selected;
     tag2=$routeParams.selected2;
     tag3=$routeParams.selected3;
-
     console.log('getQuestions with $routeParams-->', $routeParams);
     console.log('tags: 1:'+ tag + ' 2: '+ tag2 + ' 3: '+  tag3);
     return $http({

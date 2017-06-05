@@ -3,6 +3,9 @@
   <md-button id="logoutbtn" class="md-raised md-accent" ng-click="qbc.logout()">Log Out</md-button>
   <span id="points">Points: {{qbc.counter()}}</span>
 </div>
+<div class="container">
+  <p ng-if="qbc.error===true" id="error">{{qbc.errorMessage}}</p>
+</div>
 
 <div ng-repeat="q in qbc.fiveData" class="container">
   <div ng-if="qbc.fiveData_index == $index">
@@ -12,7 +15,7 @@
     <p><md-button type="button" ng-click="qbc.check('C')" ng-disabled="qbc.buttonDisabled" class="md-fab md-hue-1"> C </md-button>  {{q.c}}</p>
     <p><md-button type="button" ng-click="qbc.check('D')" ng-disabled="qbc.buttonDisabled" class="md-fab md-hue-1"> D </md-button>  {{q.d}}</p>
     <p><em>Need a Hint?</em>  Learn More in {{q.source}} at {{q.page}}.</p>
-    <p ng-if="qbc.showMessage===true" id="answer">{{qbc.message}}</p>
+    <p ng-if="qbc.showMessage===true" class="answer" ng-style="qbc.message==='CORRECT!' && {'color':'green'}">{{qbc.message}}</p>
     <md-button class="md-accent md-raised" ng-click="qbc.next()">Continue</md-button>
   </div>
 </div>

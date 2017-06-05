@@ -21,13 +21,19 @@ myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'question
     return questionsService.getCount();
   };
 
+  vm.error = false;
+
   vm.getTagsQuestions = function(){
-    // console.log('in getTagsQuestions: vm.selected:', vm.selected);
     questionsService.getTagsQuestions($route.current.params).then(function(data){
       console.log('back from server with TAGS five random questions/data-->', data);
       vm.fiveData = data;
       console.log('vm.fiveData:', vm.fiveData);
-      return vm.fiveData;
+      if (vm.fiveData.length===0) {
+        vm.error = true;
+        vm.errorMessage="You didn\'t select a topic!  Click the 'Main' button and try again.";
+      } else{
+        return vm.fiveData;
+      }
     });
   };
 
@@ -37,12 +43,12 @@ myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'question
   $http.get('/user').then(function(response) {
     // username is actually email address
       if(response.data.email) {
-          // user has a current session on the server
-          vm.userName = response.data.firstName;
-          console.log('User Data: ', vm.userName);
+        // user has a current session on the server
+        vm.userName = response.data.firstName;
+        console.log('User Data: ', vm.userName);
       } else {
-          // user has no session, bounce them back to the login page
-          $location.path("/home");
+        // user has no session, bounce them back to the login page
+        $location.path("/home");
       }
   });
 
@@ -87,13 +93,13 @@ myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'question
     if (answer==vm.fiveData[vm.fiveData_index].answer) {
       vm.showMessage = true;
       vm.buttonDisabled=true;
-      vm.message = 'Correct!';
+      vm.message = 'CORRECT!';
       questionsService.setCount();
       questionsService.getCount();
     } else{
       vm.showMessage = true;
       vm.buttonDisabled=true;
-      vm.message = 'Incorrect.  The correct answer is ' + vm.fiveData[vm.fiveData_index].answer + '.';
+      vm.message = 'INCORRECT.  The correct answer is ' + vm.fiveData[vm.fiveData_index].answer + '.';
     }
   };
 

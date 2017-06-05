@@ -10,6 +10,11 @@ augsburg color: #650a34
   background-size: cover;
 }
 
+#error{
+  color: red;
+  font-weight: bold;
+}
+
 #logoutbtn{
   display: inline;
   margin-left: 25px;
@@ -56,9 +61,10 @@ input {
     height: 100px;
 }
 
-#answer {
+.answer {
   color: red;
   font-weight: bold;
+  font-size: 36px;
 }
 
 #entryForm {

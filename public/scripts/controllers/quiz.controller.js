@@ -2,15 +2,16 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
   var vm = this;
   console.log('QuizController loaded');
   console.log('checking user');
+  console.log('$routeParams: ', $routeParams);
 
   vm.chapter = $routeParams.chapterid;
 
   // Upon load, check this user's session on the server
   $http.get('/user').then(function(response) {
-    // username is actually email address
     if(response.data.email) {
       // user has a current session on the server
       vm.userName = response.data.firstName;
+      vm.userEmail = response.data.email;
       console.log('from QuizController: still logged in as User Data: ', vm.userName);
     } else {
       // user has no session, bounce them back to the login page
@@ -57,17 +58,15 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
   };
 
   vm.check = function(answer){
+    vm.showMessage = true;
+    vm.buttonDisabled=true;
     console.log('you clicked:', answer);
     if (answer==vm.fiveData[vm.fiveData_index].answer) {
-      vm.showMessage = true;
-      vm.buttonDisabled=true;
-      vm.message = 'Correct!';
+      vm.message = 'CORRECT!';
       questionsService.setCount();
       questionsService.getCount();
     } else{
-      vm.showMessage = true;
-      vm.buttonDisabled=true;
-      vm.message = 'Incorrect.  The correct answer is ' + vm.fiveData[vm.fiveData_index].answer + '.';
+      vm.message = 'INCORRECT.  The correct answer is ' + vm.fiveData[vm.fiveData_index].answer + '.';
     }
   };
 

@@ -36,9 +36,10 @@ app.use(passport.session());
 
 // Routes
 app.use('/register', register);
-app.use('/user', user);
+app.use('/user/', user);
 app.use('/box/',box);
 app.use('/questions/', questions);
+app.use('/points', user);
 app.use('/*', index);
 
 // Mongo Connection //

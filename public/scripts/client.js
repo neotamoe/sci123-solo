@@ -16,7 +16,7 @@ myApp.config(['$routeProvider', '$locationProvider','$mdThemingProvider', functi
       templateUrl: '/views/user.html',
       controller: "UserController as uc"
     })
-    .when('/tagsbox/:selected/:selected2?/:selected3?', {
+    .when('/tagsbox/:selected?/:selected2?/:selected3?', {
       // $routeParams
       templateUrl: '/views/tagsbox.html',
       controller: "QuizBoxController as qbc"
@@ -36,9 +36,9 @@ myApp.config(['$routeProvider', '$locationProvider','$mdThemingProvider', functi
   $mdThemingProvider.theme('default')
     .primaryPalette('orange', {
       'default': '400', // by default use shade 400 from the deep-purple palette for primary intentions
-      'hue-1': '100', // use shade 100 for the <code>md-hue-1</code> class
-      'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
-      'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
+      'hue-1': '100', // use shade 100 for the md-hue-1 class
+      'hue-2': '600', // use shade 600 for the md-hue-2 class
+      'hue-3': 'A100' // use shade A100 for the md-hue-3 class
     })
     .accentPalette('deep-purple', {
       'default': '300' // use shade 300 for default, and keep all other shades the same
