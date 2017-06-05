@@ -12,7 +12,7 @@ router.get('/:chapter', function(req, res) {
   if(req.isAuthenticated()) {
     // send back user object from database
     console.log('still logged in');
-    questionsModel.aggregate([{$match: {display:'true', chapter:currentChapter}},{$sample:{size:5}}]).then(function(data){
+    questionsModel.aggregate([{$match: {display:'true', chapter:currentChapter}},{$sample:{size:10}}]).then(function(data){
       console.log('data for chapter' + currentChapter + '-->', data);
       res.send(data);
     });
