@@ -21,4 +21,21 @@ router.get('/', function(req, res) {
   }
 });
 
+router.post('/', function(req, res) {
+  console.log(' in get route for points.  req.body--> ', req.body);
+  // check if logged in
+  if(req.isAuthenticated()) {
+    // send back user object from database
+    console.log('still logged in');
+    userModel.findOneAndUpdate({email:req.body.email},{points:req.body.points}).then(function(data){
+      console.log('data for points post-->', data);
+      res.send(data);
+    });
+  } else {
+    // failure best handled on the server. do redirect here.
+    console.log('not logged in');
+    res.sendStatus(403);
+  }
+});
+
 module.exports = router;

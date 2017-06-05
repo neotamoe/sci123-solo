@@ -1,7 +1,7 @@
 <div class="container">
   <a href="#/user"><md-button id="mainbtn" class="md-raised md-accent">Main</md-button></a>
   <md-button id="logoutbtn" class="md-raised md-accent" ng-click="qbc.logout()">Log Out</md-button>
-  <span id="points">Points: {{qbc.counter()}}</span>
+  <span id="points">Points: {{qbc.points}}</span>
 </div>
 <div class="container">
   <p ng-if="qbc.error===true" id="error">{{qbc.errorMessage}}</p>

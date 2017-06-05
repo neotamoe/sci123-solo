@@ -18,8 +18,12 @@ myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'question
   // };
 
   vm.counter = function(){
-    return questionsService.getCount();
+    questionsService.getCount(vm.userEmail).then(function(data){
+      vm.points=data;
+    });
   };
+
+  vm.counter();
 
   vm.error = false;
 
@@ -89,16 +93,15 @@ myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'question
   };
 
   vm.check = function(answer){
+    vm.showMessage = true;
+    vm.buttonDisabled=true;
     console.log('you clicked:', answer);
     if (answer==vm.fiveData[vm.fiveData_index].answer) {
-      vm.showMessage = true;
-      vm.buttonDisabled=true;
       vm.message = 'CORRECT!';
-      questionsService.setCount();
-      questionsService.getCount();
+      questionsService.setCount(vm.userEmail).then(function(){
+        vm.counter();
+      });
     } else{
-      vm.showMessage = true;
-      vm.buttonDisabled=true;
       vm.message = 'INCORRECT.  The correct answer is ' + vm.fiveData[vm.fiveData_index].answer + '.';
     }
   };

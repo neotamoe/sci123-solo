@@ -38,8 +38,12 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
   vm.getQuestions();
 
   vm.counter = function(){
-    return questionsService.getCount();
+    questionsService.getCount(vm.userEmail).then(function(data){
+      vm.points=data;
+    });
   };
+
+  vm.counter();
 
   vm.fiveData_index = 0;
   vm.showMessage = false;
@@ -63,8 +67,9 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
     console.log('you clicked:', answer);
     if (answer==vm.fiveData[vm.fiveData_index].answer) {
       vm.message = 'CORRECT!';
-      questionsService.setCount();
-      questionsService.getCount();
+      questionsService.setCount(vm.userEmail).then(function(){
+        vm.counter();
+      });
     } else{
       vm.message = 'INCORRECT.  The correct answer is ' + vm.fiveData[vm.fiveData_index].answer + '.';
     }

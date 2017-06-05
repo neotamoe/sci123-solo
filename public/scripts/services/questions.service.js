@@ -14,17 +14,27 @@ myApp.service('questionsService', function($http,$routeParams,$route){
     }).then(function(response){
       console.log('getCount response.data = ', response);
       count = response.data[0].points;
-      console.log('service count:',count);
+      console.log('service get count:',count);
       return count;
     });
   };  // end getCount
 
-  // self.getCount = function(){
-  //   return count;
-  // };
-
-  self.setCount = function(){
+  self.setCount = function(userEmail){
     count++;
+    var objectToSend = {
+      email: userEmail,
+      points: count
+    };
+    return $http({
+      method: 'POST',
+      url: '/points',
+      data: objectToSend
+    }).then(function(response){
+      console.log('setCount response = ', response);
+      count = response.data.points;
+      console.log('service set count:',count);
+      return count;
+    });
   };  // end setCount
 
   self.getTagsQuestions = function(tag,tag2,tag3){
