@@ -5,12 +5,12 @@ var path = require('path');
 var userModel = require('../models/user.model');
 
 router.get('/', function(req, res) {
-  console.log(' in get route for points');
+  console.log(' in get route for points: req', req.user.email);
   // check if logged in
   if(req.isAuthenticated()) {
     // send back user object from database
     console.log('still logged in');
-    userModel.find({email: req.query.email}).then(function(data){
+    userModel.find({email: req.user.email}).then(function(data){
       console.log('data for points query-->', data);
       res.send(data);
     });

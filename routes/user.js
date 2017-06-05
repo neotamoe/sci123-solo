@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var path = require('path');
-var userModel = require('../models/user.model');
+var UserModel = require('../models/user.model');
 
 // Handles Ajax request for user information if user is authenticated
 router.get('/', function(req, res) {
@@ -21,12 +21,12 @@ router.get('/', function(req, res) {
 });
 
 // router.get('/points', function(req, res) {
-//   console.log(' in get route for points');
+//   console.log(' in get route for points: req.query-->',req.query);
 //   // check if logged in
 //   if(req.isAuthenticated()) {
 //     // send back user object from database
 //     console.log('still logged in');
-//     userModel.find({email: req.query.email}).then(function(data){
+//     UserModel.find({email: req.query.email}).then(function(data){
 //       console.log('data for points query-->', data);
 //       res.send(data);
 //     });

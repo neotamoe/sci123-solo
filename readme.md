@@ -11,10 +11,10 @@
 	- [x] npm init 5/30
 	- [x] git init 5/30
 * [ ] Format questions and import into database - 5/30/17 
-	- [x]design model and schema for mongoDB 5/30
-	- format questions - in progress (1/7 done 5/30)
-	- export in csv format - in progress (1/7 done 5/30)
-	- import into database -  in progress (1/7 done 5/30)
+	- [x] design model and schema for mongoDB 5/30
+	- [x] format questions 5/30-6/5
+	- [x] export in csv format 5/3-6/5
+	- [x] import into database 5/30-6/5
 * [ ] Complete landing page and connect to database - 5/31/17 
 	- [x] basic style setup displaying chapter titles 6/1
 	- [x] decide first draft colors 5/31
@@ -23,8 +23,8 @@
 	- [x] add student/user "how to use app" paragraph 6/2
 * [x] Passport authentication and register/login pages functional - 6/2/17 
 	- [x] utilize code base for authentication 5/30
-	- [/] register page, 5/30 functional, needs styling
-	- [/] login page, 5/30 funtional, needs styling
+	- [x] register page, 5/30 
+	- [x] login page, 5/30 
 	- [x] ensure links between login and register pages works 5/30
 * [/] Quiz questions pulling from database (including front end formatting and search functionality) - 6/5/17 
 	- [x] basic template for question display 6/2
@@ -32,6 +32,7 @@
 	- [x] random number generator to display 5 random questions to display upon chapter or keyword selection 6/1
 	- [x] ensure checkboxes pulling questions and displaying 6/3
 	- [ ] points calculating
+	- [x] add home button to all views
 * [ ] Complete admin page/view - 6/6/17   
 	- check admin email address
 	- [x]make sure schema accounts for admin approval/denial of question

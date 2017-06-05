@@ -2,25 +2,26 @@ myApp.service('questionsService', function($http,$routeParams,$route){
 
   var self = this;
 
-  var count = 0;
+  var count;
 
-  // self.getCount = function(userEmail){
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/points',
-  //     params: {
-  //       email: userEmail
-  //     }
-  //   }).then(function(response){
-  //     console.log('getCount response.data = ', response.data);
-  //     count = response.data.points;
-  //     return count;
-  //   });
-  // };  // end getCount
-  
-  self.getCount = function(){
-    return count;
-  };
+  self.getCount = function(userEmail){
+    return $http({
+      method: 'GET',
+      url: '/points',
+      params: {
+        email: userEmail,
+      }
+    }).then(function(response){
+      console.log('getCount response.data = ', response);
+      count = response.data[0].points;
+      console.log('service count:',count);
+      return count;
+    });
+  };  // end getCount
+
+  // self.getCount = function(){
+  //   return count;
+  // };
 
   self.setCount = function(){
     count++;

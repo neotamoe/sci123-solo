@@ -10,7 +10,8 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', '$
     if(response.data.email) {
       // user has a current session on the server
       vm.userName = response.data.firstName;
-      console.log('User Data: ', vm.userName);
+      vm.userEmail = response.data.email;
+      console.log('User Data: ', vm.userEmail + 'user firstName:', vm.userName);
     } else {
       // user has no session, bounce them back to the login page
       $location.path("/home");
@@ -36,8 +37,12 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', '$
   vm.getTags();
 
   vm.counter = function(){
-    return questionsService.getCount();
+    questionsService.getCount(vm.userEmail).then(function(data){
+      vm.points=data;
+    });
   };
+
+  vm.counter();
 
   vm.items = [];
   vm.selected=[];

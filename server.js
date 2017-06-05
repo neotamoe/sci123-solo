@@ -13,6 +13,7 @@ var user = require('./routes/user');
 var register = require('./routes/register');
 var questions = require('./routes/questions');
 var box = require ('./routes/box');
+var points = require ('./routes/points');
 
 // body parser middleware
 app.use(bodyParser.json());
@@ -39,7 +40,7 @@ app.use('/register', register);
 app.use('/user/', user);
 app.use('/box/',box);
 app.use('/questions/', questions);
-app.use('/points', user);
+app.use('/points', points);
 app.use('/*', index);
 
 // Mongo Connection //
