@@ -58,7 +58,7 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
     } else {
       vm.fiveData_index++;
     }
-    console.log('index' + vm.fiveData_index + '/' + 'length' + vm.fiveData.length);
+    console.log('index' + vm.fiveData_index + '/' + 'total(length-1)' + vm.fiveData.length-1);
   };
 
   vm.check = function(answer){

@@ -42,7 +42,7 @@ app.use('/user/', user);
 app.use('/box/',box);
 app.use('/questions/', questions);
 app.use('/points', points);
-app.use('/pending', pending);
+app.use('/pending/', pending);
 app.use('/*', index);
 
 // Mongo Connection //

@@ -5,7 +5,7 @@
 </div>
 <p>Some questions to review should appear one at a time in the div below.</p>
 <div class="container" ng-repeat="x in rc.toReview">
-  <!-- <div ng-if="qc.fiveData_index == $index"> -->
+  <div ng-if="rc.toReview_index == $index">
     <h2>Question: {{x.question}}</h2>
     <p>A: {{x.a}}</p>
     <p>B: {{x.b}}</p>
@@ -17,8 +17,8 @@
     <p>Page: {{x.page}}.</p>
     <p>tags should show here</p>
     <!-- these buttons need to be revised -->
-    <md-button class="md-accent md-raised" ng-click="">Approve</md-button>
+    <md-button class="md-accent md-raised" ng-click="rc.approve(x._id)">Approve</md-button>
     <md-button class="md-accent md-raised" ng-click="">Deny</md-button>
-    <md-button class="md-accent md-raised" ng-click="">Next</md-button>
-  <!-- </div> -->
+    <md-button class="md-accent md-raised" ng-click="rc.next()">Next</md-button>
+  </div>
 </div>

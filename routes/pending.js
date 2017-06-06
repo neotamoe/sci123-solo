@@ -22,4 +22,22 @@ router.get('/', function(req, res) {
   }
 });
 
+router.post('/:id', function(req, res) {
+  console.log(' in post route to approve pending questions: req.params.id-->', req.params.id);
+  objectid=req.params.id;
+  // check if logged in
+  if(req.isAuthenticated()) {
+    // send back user object from database
+    console.log('still logged in');
+    questionsModel.findOneAndUpdate({_id:objectid},{display:'true'}).then(function(){
+      res.send('woof woof it is approved');
+    });
+  } else {
+    // failure best handled on the server. do redirect here.
+    console.log('not logged in');
+    $location.path("/home");
+    res.sendStatus(403);
+  }
+});
+
 module.exports = router;

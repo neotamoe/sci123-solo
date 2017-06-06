@@ -4,6 +4,18 @@ myApp.controller('ReviewController', ['$http', '$location', 'questionsService', 
 
   console.log('ReviewController loaded');
 
+  $http.get('/user').then(function(response) {
+    if(response.data.email) {
+      // user has a current session on the server
+      vm.userName = response.data.firstName;
+      vm.userEmail = response.data.email;
+      console.log('from QuizController: still logged in as User Data: ', vm.userName);
+    } else {
+      // user has no session, bounce them back to the login page
+      $location.path("/home");
+    }
+  });
+
   vm.toReview = [];
 
   vm.getPendingQuestions = function(){
@@ -13,6 +25,26 @@ myApp.controller('ReviewController', ['$http', '$location', 'questionsService', 
     });
   };
 
+  vm.approve = function(){
+    console.log('vm.toReview[i]._id:', vm.toReview[vm.toReview_index]._id);
+    ReviewSubmitService.approvePending(vm.toReview[vm.toReview_index]._id);
+  };
+
+  // vm.deny = function(){
+  //   ReviewSubmitService.denyPending();
+  // };
+
   vm.getPendingQuestions();
+
+  vm.toReview_index = 0;
+
+  vm.next = function () {
+    if (vm.toReview_index >= vm.toReview.length - 1) {
+      $location.path("/user");
+    } else {
+      vm.toReview_index++;
+    }
+    console.log('index:' + vm.toReview_index + '/' + 'length-1:' + vm.toReview.length-1);
+  };
 
 }]);  // end ReviewController
