@@ -15,6 +15,10 @@ augsburg color: #650a34
   font-weight: bold;
 }
 
+#instructions{
+  font-weight: bold;
+}
+
 #logoutbtn{
   display: inline;
   margin-left: 25px;
@@ -42,6 +46,11 @@ body{
     text-align: center;
 }
 
+label.submit{
+  text-align: right;
+  margin-right: 10px;
+}
+
 label{
   display: inline-block;
   float: left;
@@ -49,12 +58,17 @@ label{
   width: 80px;
   text-align: left;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 input {
   display: inline-block;
   float: left;
   width: 250px;
+}
+
+input.submitinput{
+  width: 80%;
 }
 
 .instructions {
