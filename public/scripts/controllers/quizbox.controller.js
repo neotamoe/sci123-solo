@@ -4,18 +4,6 @@ myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'question
   console.log('checking user');
 
   console.log('$route.current.params-->', $route.current.params);
-  // vm.selected = $route.current.params.selected;
-  // console.log('outside $routeChangeSuccess--> vm.selected:', vm.selected);
-// this will work when only searching for a single tag
-  // vm.getTagsQuestions = function(){
-  //   // console.log('in getTagsQuestions: vm.selected:', vm.selected);
-  //   questionsService.getTagsQuestions(vm.selected).then(function(data){
-  //     console.log('back from server with TAGS five random questions/data-->', data);
-  //     vm.fiveData = data;
-  //     console.log('vm.fiveData:', vm.fiveData);
-  //     return vm.fiveData;
-  //   });
-  // };
 
   vm.counter = function(){
     questionsService.getCount(vm.userEmail).then(function(data){

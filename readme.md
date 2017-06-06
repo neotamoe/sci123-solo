@@ -31,7 +31,7 @@
 	- display to be mobile-responsive 
 	- [x] random number generator to display 5 random questions to display upon chapter or keyword selection 6/1
 	- [x] ensure checkboxes pulling questions and displaying 6/3
-	- [ ] points calculating
+	- [x] points calculating
 	- [x] add home button to all views
 * [ ] Complete admin page/view - 6/6/17   
 	- check admin email address

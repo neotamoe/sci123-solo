@@ -30,6 +30,14 @@ myApp.config(['$routeProvider', '$locationProvider','$mdThemingProvider', functi
       templateUrl: '/views/endquiz.html',
       controller: "UserController as uc"
     })
+    .when('/review', {
+      templateUrl: '/views/review.html',
+      controller: "ReviewController as rc"
+    })
+    .when('/submit', {
+      templateUrl: '/views/submit.html',
+      controller: "UserController as uc"
+    })
     .otherwise({
       redirectTo: '/home'
     });

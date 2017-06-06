@@ -8,7 +8,8 @@ var UserSchema = new Schema({
     email: {type: String, required: true, index: {unique: true}},
     firstName: {type: String, required: true},
     password: {type: String, required: true},
-    points:{type: Number, default: 0}
+    points:{type: Number, default: 0},
+    admin: {type: Boolean, default: false}
 });
 
 // Called before adding a new user to the DB. Encrypts password.

@@ -1,0 +1,38 @@
+<div ng-controller="UserController as uc" class="container">
+  <h3 id="welcome">Welcome, {{uc.userName}}!</h3>
+  <a href="#/review"><md-button id="reviewbtn" class="md-raised md-accent" ng-if="uc.adminStatus===true">Review Submitted Questions</md-button></a>
+  <a href="#/add"><md-button id="addbtn" class="md-raised md-accent">Submit a New Question</md-button></a>
+  <md-button id="logoutbtn" class="md-raised md-accent" ng-click="uc.logout()">Log Out</md-button>
+  <span id="points">Points: {{uc.points}}</span>
+</div>
+
+<div class="container">
+  <label for="chapter"></label>
+  <input type="text" name="chapter" value="">
+
+  <label for="source"></label>
+  <input type="text" name="source" value="">
+
+  <label for="page"></label>
+  <input type="text" name="page" value="">
+
+  <label for="question"></label>
+  <input type="text" name="question" value="">
+
+  <label for="a"></label>
+  <input type="text" name="a" value="">
+
+  <label for="b"></label>
+  <input type="text" name="b" value="">
+
+  <label for="c"></label>
+  <input type="text" name="c" value="">
+
+  <label for="d"></label>
+  <input type="text" name="d" value="">
+
+  <label for="answer"></label>
+  <input type="text" name="answer" value="">
+
+  <!-- tags to be added via checkboxes -->
+</div>

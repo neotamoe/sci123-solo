@@ -1,0 +1,24 @@
+<div ng-controller="UserController as uc" class="container">
+  <h3 id="welcome">Welcome, {{uc.userName}}!</h3>
+  <a href="#/user"><md-button id="mainbtn" class="md-raised md-accent">Main</md-button></a>
+  <md-button id="logoutbtn" class="md-raised md-accent" ng-click="uc.logout()">Log Out</md-button>
+</div>
+<p>Some questions to review should appear one at a time in the div below.</p>
+<div class="container" ng-repeat="x in rc.toReview">
+  <!-- <div ng-if="qc.fiveData_index == $index"> -->
+    <h2>Question: {{x.question}}</h2>
+    <p>A: {{x.a}}</p>
+    <p>B: {{x.b}}</p>
+    <p>C: {{x.c}}</p>
+    <p>D: {{x.d}}</p>
+    <p>Answer: {{x.answer}}</p>
+    <p>Chapter: {{x.chapter}}</p>
+    <p>Source: {{x.source}}</p>
+    <p>Page: {{x.page}}.</p>
+    <p>tags should show here</p>
+    <!-- these buttons need to be revised -->
+    <md-button class="md-accent md-raised" ng-click="">Approve</md-button>
+    <md-button class="md-accent md-raised" ng-click="">Deny</md-button>
+    <md-button class="md-accent md-raised" ng-click="">Next</md-button>
+  <!-- </div> -->
+</div>

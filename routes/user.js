@@ -16,6 +16,7 @@ router.get('/', function(req, res) {
   } else {
     // failure best handled on the server. do redirect here.
     console.log('not logged in');
+    $location.path("/home");
     res.sendStatus(403);
   }
 });

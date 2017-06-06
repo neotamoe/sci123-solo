@@ -11,6 +11,7 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', '$
       // user has a current session on the server
       vm.userName = response.data.firstName;
       vm.userEmail = response.data.email;
+      vm.adminStatus = response.data.admin;
       console.log('User Data: ', vm.userEmail + 'user firstName:', vm.userName);
     } else {
       // user has no session, bounce them back to the login page
@@ -73,5 +74,6 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', '$
   vm.exists = function (item, list) {
     return list.indexOf(item) > -1;
   };
+
 
 }]);  // end UserController
