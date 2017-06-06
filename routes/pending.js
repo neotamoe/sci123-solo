@@ -30,7 +30,7 @@ router.post('/:id', function(req, res) {
     // send back user object from database
     console.log('still logged in');
     questionsModel.findOneAndUpdate({_id:objectid},{display:'true'}).then(function(){
-      res.send('woof woof it is approved');
+      res.sendStatus(200);
     });
   } else {
     // failure best handled on the server. do redirect here.

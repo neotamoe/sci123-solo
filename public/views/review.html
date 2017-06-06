@@ -3,10 +3,13 @@
   <a href="#/user"><md-button id="mainbtn" class="md-raised md-accent">Main</md-button></a>
   <md-button id="logoutbtn" class="md-raised md-accent" ng-click="uc.logout()">Log Out</md-button>
 </div>
-<p>Some questions to review should appear one at a time in the div below.</p>
+<div class="container">
+  <h3 ng-if="!rc.toReview.length">{{rc.nothingtoreview}}</h3>
+</div>
 <div class="container" ng-repeat="x in rc.toReview">
   <div ng-if="rc.toReview_index == $index">
-    <h2>Question: {{x.question}}</h2>
+    <!-- <label for="question input">Question: </label><input type="text" name="question" value="{{x.question}}"> -->
+    <h3>Question: {{x.question}}</h3>
     <p>A: {{x.a}}</p>
     <p>B: {{x.b}}</p>
     <p>C: {{x.c}}</p>
@@ -16,9 +19,10 @@
     <p>Source: {{x.source}}</p>
     <p>Page: {{x.page}}.</p>
     <p>Tags: {{x.tags}}</p>
-    <!-- these buttons need to be revised -->
+    <p ng-if="rc.approveStatus===true" class="answer" ng-style="rc.approveMessage==='Question approved.  Click next.' && {'color':'green'}">{{rc.approveMessage}}</p>
+    <p ng-if="rc.deleteStatus===true" class="answer" ng-style="rc.deleteMessage==='Question deleted.  Click next.' && {'color':'green'}">{{rc.deleteMessage}}</p>
     <md-button class="md-accent md-raised" ng-click="rc.approve(x._id)">Approve</md-button>
     <md-button class="md-accent md-raised" ng-click="rc.delete(x._id)">Delete</md-button>
-    <md-button class="md-accent md-raised" ng-click="rc.next()">Next</md-button>
+    <md-button class="md-accent md-raised" ng-click="rc.next()">Next/Skip</md-button>
   </div>
 </div>

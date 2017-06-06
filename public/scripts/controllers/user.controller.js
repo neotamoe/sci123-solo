@@ -75,5 +75,8 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', '$
     return list.indexOf(item) > -1;
   };
 
+  // vm.reload = function(){
+  //   $route.reload();
+  // };
 
 }]);  // end UserController

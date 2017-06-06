@@ -32,7 +32,6 @@ router.get('/', function(req, res) {
     console.log('still logged in');
     questionsModel.distinct('tags').sort().then( function(data) {
       console.log('data for tags-->', data);
-      $location.path("/home");
       res.send(data);
     });
   } else {

@@ -27,13 +27,20 @@ myApp.controller('ReviewController', ['$http', '$location', 'questionsService', 
 
   vm.approve = function(){
     console.log('vm.toReview[i]._id:', vm.toReview[vm.toReview_index]._id);
-    ReviewSubmitService.approvePending(vm.toReview[vm.toReview_index]._id);
+    ReviewSubmitService.approvePending(vm.toReview[vm.toReview_index]._id).then(function(response){
+      console.log('logging response to see if status code is here:', response +'or response.status:', response.status);
+      if(response.status===200){
+        vm.approveStatus = true;
+      }
+    });
   };
 
   vm.delete = function(){
     ReviewSubmitService.deletePending(vm.toReview[vm.toReview_index]._id).then(function(data){
       console.log('data:', data);
-      // add message to display on DOM saying delete is complete
+      if(data.status===200){
+        vm.deleteStatus = true;
+      }
     });
   };
 
@@ -45,9 +52,15 @@ myApp.controller('ReviewController', ['$http', '$location', 'questionsService', 
     if (vm.toReview_index >= vm.toReview.length - 1) {
       $location.path("/user");
     } else {
+      vm.approve = false;
       vm.toReview_index++;
     }
     console.log('index:' + vm.toReview_index + '/' + 'length-1:' + vm.toReview.length-1);
   };
 
+  vm.approveStatus = false;
+  vm.deleteStatus = false;
+  vm.approveMessage = "Question approved.  Click next.";
+  vm.deleteMessage = "Question deleted.  Click next.";
+  vm.nothingtoreview = "No new questions to review.";
 }]);  // end ReviewController

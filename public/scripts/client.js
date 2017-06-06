@@ -36,7 +36,7 @@ myApp.config(['$routeProvider', '$locationProvider','$mdThemingProvider', functi
     })
     .when('/submit', {
       templateUrl: '/views/submit.html',
-      controller: "UserController as uc"
+      controller: "SubmitController as sc"
     })
     .otherwise({
       redirectTo: '/home'

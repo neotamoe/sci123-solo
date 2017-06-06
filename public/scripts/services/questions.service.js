@@ -67,6 +67,7 @@ myApp.service('questionsService', function($http,$routeParams,$route){
       method: 'GET',
       url: '/questions',
     }).then(function(response){
+      console.log('getTags response.data:', response.data);
       return response.data;
     });
   };

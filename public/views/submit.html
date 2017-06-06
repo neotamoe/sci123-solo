@@ -39,7 +39,20 @@
   <input class="submitinput" type="text" name="d" value="" placeholder="multiple choice text" ng-model=""><br>
 
   <label for="answer" class="submit">Answer:</label>
-  <input class="submitinput" type="text" name="answer" value="" placeholder="capital letter of correct answer (e.g. A)" ng-model=""><br>
-
+  <input class="submitinput" type="text" name="answer" value="" placeholder="capital letter of correct answer (e.g. A)" ng-model="">
+</div><br>
   <!-- tags to be added via checkboxes -->
+<div class="container">
+  <p><br><span><strong>Add up to 3 tags:</strong></span></p>
+</div>
+<div class="md-padding checkbox container" ng-cloak="">
+  <div layout="row" layout-wrap>
+    <div layout="column">
+      <div layout="row" layout-wrap flex>
+        <div flex-offset="5" flex="20" ng-repeat="item in sc.items track by $index">
+          <md-checkbox ng-model="checkmark" ng-change="sc.checkChanged(item)" ng-disabled="sc.checked==sc.limit && !checkmark" ng-checked="sc.exists(item, sc.selected)" ng-click="sc.toggle(item, sc.selected)">{{ item }}</md-checkbox>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
