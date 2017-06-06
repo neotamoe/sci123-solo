@@ -30,9 +30,12 @@ myApp.controller('ReviewController', ['$http', '$location', 'questionsService', 
     ReviewSubmitService.approvePending(vm.toReview[vm.toReview_index]._id);
   };
 
-  // vm.deny = function(){
-  //   ReviewSubmitService.denyPending();
-  // };
+  vm.delete = function(){
+    ReviewSubmitService.deletePending(vm.toReview[vm.toReview_index]._id).then(function(data){
+      console.log('data:', data);
+      // add message to display on DOM saying delete is complete
+    });
+  };
 
   vm.getPendingQuestions();
 

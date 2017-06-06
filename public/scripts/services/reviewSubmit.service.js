@@ -24,8 +24,15 @@ myApp.service('ReviewSubmitService', function($http,$routeParams,$route){
     });
   };
 
-  // self.denyPending = function(){
-  //   console.log('in POST denyPending');
-  // };
+  self.deletePending = function(id){
+    console.log('in DELETE deletePending');
+    return $http({
+      method:'DELETE',
+      url:'/pending/' + id,
+    }).then(function(response){
+      console.log('delete pending service response:', response);
+      return response;
+    });
+  };
 
 });  // end questionService

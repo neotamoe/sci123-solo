@@ -15,10 +15,10 @@
     <p>Chapter: {{x.chapter}}</p>
     <p>Source: {{x.source}}</p>
     <p>Page: {{x.page}}.</p>
-    <p>tags should show here</p>
+    <p>Tags: {{x.tags}}</p>
     <!-- these buttons need to be revised -->
     <md-button class="md-accent md-raised" ng-click="rc.approve(x._id)">Approve</md-button>
-    <md-button class="md-accent md-raised" ng-click="">Deny</md-button>
+    <md-button class="md-accent md-raised" ng-click="rc.delete(x._id)">Delete</md-button>
     <md-button class="md-accent md-raised" ng-click="rc.next()">Next</md-button>
   </div>
 </div>
