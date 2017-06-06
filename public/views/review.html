@@ -6,7 +6,27 @@
 <div class="container">
   <h3 ng-if="!rc.toReview.length">{{rc.nothingtoreview}}</h3>
 </div>
-<div class="container" ng-repeat="x in rc.toReview">
+<div ng-show="rc.toggle" class="container" ng-repeat="x in rc.toReview">
+  <div ng-if="rc.toReview_index == $index">
+    <!-- <label for="question input">Question: </label><input type="text" name="question" value="{{x.question}}"> -->
+    <h3>Question: {{x.question}}</h3>
+    <p>A: {{x.a}}</p>
+    <p>B: {{x.b}}</p>
+    <p>C: {{x.c}}</p>
+    <p>D: {{x.d}}</p>
+    <p>Answer: {{x.answer}}</p>
+    <p>Chapter: {{x.chapter}}</p>
+    <p>Source: {{x.source}}</p>
+    <p>Page: {{x.page}}.</p>
+    <p>Tags: {{x.tags}}</p>
+    <p ng-if="rc.approveStatus===true" class="answer" ng-style="rc.approveMessage==='Question approved.  Click next.' && {'color':'green'}">{{rc.approveMessage}}</p>
+    <p ng-if="rc.deleteStatus===true" class="answer" ng-style="rc.deleteMessage==='Question deleted.  Click next.' && {'color':'green'}">{{rc.deleteMessage}}</p>
+    <md-button class="md-accent md-raised" ng-click="rc.approve(x._id)">Approve</md-button>
+    <md-button class="md-accent md-raised" ng-click="rc.delete(x._id)">Delete</md-button>
+    <md-button class="md-accent md-raised" ng-click="rc.next()">Next/Skip</md-button>
+  </div>
+</div>
+<div ng-hide="rc.toggle" class="container" ng-repeat="x in rc.toReview">
   <div ng-if="rc.toReview_index == $index">
     <!-- <label for="question input">Question: </label><input type="text" name="question" value="{{x.question}}"> -->
     <h3>Question: {{x.question}}</h3>

@@ -4,6 +4,9 @@ myApp.controller('ReviewController', ['$http', '$location', 'questionsService', 
 
   console.log('ReviewController loaded');
 
+  vm.toggle = true;
+
+
   $http.get('/user').then(function(response) {
     if(response.data.email) {
       // user has a current session on the server
