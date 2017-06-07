@@ -59,4 +59,11 @@ myApp.service('ReviewSubmitService', function($http,$routeParams,$route){
     });
   };
 
+  // self.sendEmail = function (){
+  //   console.log('in sendEmail function in service');
+  //   $http({
+  //     method:
+  //   })
+  // }
+
 });  // end questionService

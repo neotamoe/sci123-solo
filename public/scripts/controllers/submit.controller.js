@@ -58,6 +58,10 @@ myApp.controller('SubmitController', ['$http', '$location', 'questionsService', 
     });
   };
 
+  // vm.email = function(){
+  //   ReviewSubmitService.sendEmail();
+  // };
+
   vm.clearForm = function(){
     submitform.reset();
     vm.selected=[];
