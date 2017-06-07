@@ -21,24 +21,6 @@ router.get('/', function(req, res) {
   }
 });
 
-// router.get('/points', function(req, res) {
-//   console.log(' in get route for points: req.query-->',req.query);
-//   // check if logged in
-//   if(req.isAuthenticated()) {
-//     // send back user object from database
-//     console.log('still logged in');
-//     UserModel.find({email: req.query.email}).then(function(data){
-//       console.log('data for points query-->', data);
-//       res.send(data);
-//     });
-//   } else {
-//     // failure best handled on the server. do redirect here.
-//     console.log('not logged in');
-//     res.sendStatus(403);
-//   }
-// });
-
-
 // clear all server session information about this user
 router.get('/logout', function(req, res) {
   // Use passport's built-in method to log out the user

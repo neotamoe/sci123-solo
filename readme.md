@@ -26,7 +26,7 @@
 	- [x] register page, 5/30 
 	- [x] login page, 5/30 
 	- [x] ensure links between login and register pages works 5/30
-* [/] Quiz questions pulling from database (including front end formatting and search functionality) - 6/5/17 
+* [x] Quiz questions pulling from database (including front end formatting and search functionality) - 6/5/17 
 	- [x] basic template for question display 6/2
 	- display to be mobile-responsive 
 	- [x] random number generator to display 5 random questions to display upon chapter or keyword selection 6/1
@@ -37,13 +37,13 @@
 	- [x]make sure schema accounts for admin approval/denial of question
 * [ ] Nodemailer functional - 6/7/17
 	- will need help here!
-* [ ] Student/user able to submit a question - 6/8/17  
-	- [ ] checkboxes working for submission
+* [x] Student/user able to submit a question - 6/8/17  
+	- [x] checkboxes working for submission
 	- [x] basic input styling
-	- [ ] check admin email address
+	- [x] check admin email address to be used for nodemailer
 * [x] Administrator able to accept or decline student-submitted question for inclusion into database - 6/9/17    
 	- [x] approve/deny buttons working (ensure status in database changes upon click)
-	- [ ] administrator able to edit fields of submitted question
+	- [x] administrator able to edit fields of submitted question
 * [ ] Deploy to Heroku - 6/12/17
 
 ##Project Overview

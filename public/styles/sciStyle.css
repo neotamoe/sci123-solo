@@ -15,6 +15,12 @@ augsburg color: #650a34
   float: left;
 }
 
+#cancelbtn{
+  display: inline;
+  float: left;
+  margin-left: 25px;
+}
+
 #error{
   color: red;
   font-weight: bold;
@@ -78,6 +84,15 @@ input.submitinput {
 
 input.reviewinput{
   width: 80%;
+}
+
+/*.flex-container{
+  display: flex;
+  flex-direction: column;
+}*/
+
+.currentTags{
+  float: left;
 }
 
 .instructions {

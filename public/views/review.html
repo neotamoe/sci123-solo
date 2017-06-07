@@ -30,7 +30,7 @@
   </div>
 </div><br>
 
-<div ng-hide="rc.hide" class="container" ng-repeat="x in rc.toReview">
+<div ng-hide="rc.hide" class="flex-container container" ng-repeat="x in rc.toReview">
   <div ng-if="rc.toReview_index == $index">
     <form>
       <label for="question input">Question: </label><input class="reviewinput" type="text" value="{{x.question}}" ng-model="x.question"></input>
@@ -45,10 +45,11 @@
       <label for="tags">Tags: </label><input class="reviewinput" type="text" value="{{x.tags}}" ng-model="x.tags"></input>
     </form>
     <br>
-    <p>Current Tags: Alcohol, Baking, Bread, Cake, Carbohydrates, Cereal & Batters, Chemistry, Coffee, Cooking,
+    <p class="currentTags">Current Tags: Alcohol, Baking, Bread, Cake, Carbohydrates, Cereal & Batters, Chemistry, Coffee, Cooking,
         Desserts, Eggs, Emulsions, Energy, Fermentation, Fish & Shellfish, Flour, Food Science, Fruits & Vegetables, Heat Transfer,
         History, Lipids, Measurement, Meat, Milk, Molecules, Nutrition, Phases, Preservation, Proteins, Sauces, Science,
         Seeds, Vinegar, Water, Yeast, pH</p>
     <md-button class="md-accent md-raised" id="savebtn" ng-click="rc.save(x)">Save</md-button>
+    <md-button class="md-accent md-raised" id="cancelbtn" ng-click="rc.cancel()">Cancel</md-button>
   </div>
 </div>

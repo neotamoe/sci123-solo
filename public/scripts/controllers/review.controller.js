@@ -82,4 +82,10 @@ myApp.controller('ReviewController', ['$http', '$location', 'questionsService', 
       }
     });
   };
+
+  vm.cancel = function(){
+    vm.hide = true;
+    vm.show = true;
+  };
+
 }]);  // end ReviewController
