@@ -40,7 +40,7 @@
     <div layout="column">
       <div layout="row" layout-wrap flex>
         <div flex-offset="5" flex="20" ng-repeat="item in uc.items track by $index">
-          <md-checkbox ng-model="checkmark" ng-change="uc.checkChanged(item)" ng-disabled="uc.checked==uc.limit && !checkmark" ng-checked="uc.exists(item, uc.selected)" ng-click="uc.toggle(item, uc.selected)">{{ item }}</md-checkbox>
+          <md-checkbox ng-model="checkmark" ng-change="uc.checkChanged(item)" ng-disabled="uc.selected.length==uc.limit && !checkmark" ng-checked="uc.exists(item, uc.selected)" ng-click="uc.toggle(item, uc.selected)">{{ item }}</md-checkbox>
         </div>
       </div>
     </div>

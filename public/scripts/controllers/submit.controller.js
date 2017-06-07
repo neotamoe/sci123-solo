@@ -19,17 +19,6 @@ myApp.controller('SubmitController', ['$http', '$location', 'questionsService', 
   vm.selected=[];
 
   vm.limit = 3;
-  vm.checked = 0;
-
-  vm.checkChanged = function(item){
-    if ('ng-model="checkmark"' && vm.checked<3) {
-      vm.checked++;
-      console.log('vm.checked:', vm.checked);
-    } else {
-      vm.checked--;
-      console.log('vm.checked:', vm.checked);
-    }
-  };
 
   vm.toggle = function (item, list) {
     var idx = list.indexOf(item);
@@ -43,6 +32,29 @@ myApp.controller('SubmitController', ['$http', '$location', 'questionsService', 
 
   vm.exists = function (item, list) {
     return list.indexOf(item) > -1;
+  };
+
+
+
+  vm.studentSubmit = function(){
+    vm.submit = {
+      source: vm.submit.source,
+      chapter: vm.submit.chapter,
+      question: vm.submit.question,
+      a: vm.submit.a,
+      b: vm.submit.b,
+      c: vm.submit.c,
+      d: vm.submit.d,
+      answer: vm.submit.answer,
+      page: vm.submit.page,
+      tags: vm.selected,
+    };
+    ReviewSubmitService.studentSubmit(vm.submit).then(function(data){
+      console.log('data:', data);
+      if(data.status===200){
+        console.log('quesiton successfully submitted to database');
+      }
+    });
   };
 
 }]);  // end SubmitController

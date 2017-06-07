@@ -49,17 +49,7 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', '$
   vm.selected=[];
 
   vm.limit = 3;
-  vm.checked = 0;
 
-  vm.checkChanged = function(item){
-    if ('ng-model="checkmark"' && vm.checked<3) {
-      vm.checked++;
-      console.log('vm.checked:', vm.checked);
-    } else {
-      vm.checked--;
-      console.log('vm.checked:', vm.checked);
-    }
-  };
 
   vm.toggle = function (item, list) {
     var idx = list.indexOf(item);
@@ -75,8 +65,6 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', '$
     return list.indexOf(item) > -1;
   };
 
-  // vm.reload = function(){
-  //   $route.reload();
-  // };
+
 
 }]);  // end UserController

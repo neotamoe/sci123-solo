@@ -47,4 +47,16 @@ myApp.service('ReviewSubmitService', function($http,$routeParams,$route){
     });
   };
 
+  self.studentSubmit = function(question){
+    console.log('in POST studentSubmit:', question);
+    return $http({
+      method: 'POST',
+      url: '/submit',
+      data: question
+    }).then(function(response){
+      console.log('POST studentSubmit question response:', response);
+      return response;
+    });
+  };
+
 });  // end questionService
