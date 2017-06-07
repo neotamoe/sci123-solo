@@ -1,10 +1,8 @@
 myApp.controller('ReviewController', ['$http', '$location', 'questionsService', '$scope', 'ReviewSubmitService', function($http, $location, questionsService, $scope, ReviewSubmitService) {
-  // This happens after view/controller loads -- not ideal but it works for now.
   var vm = this;
 
   console.log('ReviewController loaded');
 
-  vm.toggle = true;
 
 
   $http.get('/user').then(function(response) {
@@ -61,9 +59,27 @@ myApp.controller('ReviewController', ['$http', '$location', 'questionsService', 
     console.log('index:' + vm.toReview_index + '/' + 'length-1:' + vm.toReview.length-1);
   };
 
+  vm.edit = function(){
+    vm.hide=false;
+    vm.show=false;
+  };
+
+  vm.show = true;
+  vm.hide = true;
   vm.approveStatus = false;
   vm.deleteStatus = false;
-  vm.approveMessage = "Question approved.  Click next.";
-  vm.deleteMessage = "Question deleted.  Click next.";
+  vm.approveMessage = "Question approved and saved in database.";
+  vm.deleteMessage = "Question deleted from database.";
+  // vm.saveMessage = "Question saved in database for future review and approval.";
   vm.nothingtoreview = "No new questions to review.";
+
+  vm.save = function(){
+    ReviewSubmitService.savePending(vm.toReview[vm.toReview_index]).then(function(data){
+      console.log('data-->', data);
+      if (data.status===200){
+        vm.hide = true;
+        vm.show = true;
+      }
+    });
+  };
 }]);  // end ReviewController

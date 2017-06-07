@@ -59,4 +59,33 @@ router.delete('/:id', function(req, res) {
   }
 });
 
+router.post('/', function(req, res) {
+  console.log(' in post route to save pending questions: req.body-->', req.body);
+  // check if logged in
+  if(req.isAuthenticated()) {
+    // send back user object from database
+    console.log('still logged in');
+    questionsModel.update({_id:req.body._id},{
+      chapter:req.body.chapter,
+      source: req.body.source,
+      question:req.body.question,
+      page:req.body.page,
+      a:req.body.a,
+      b:req.body.b,
+      c:req.body.c,
+      d:req.body.d,
+      answer:req.body.answer,
+      tags:req.body.tags,
+      display:'false'})
+      .then(function(){
+      res.sendStatus(200);
+    });
+  } else {
+    // failure best handled on the server. do redirect here.
+    console.log('not logged in');
+    $location.path("/home");
+    res.sendStatus(403);
+  }
+});
+
 module.exports = router;

@@ -10,6 +10,11 @@ augsburg color: #650a34
   background-size: cover;
 }
 
+#savebtn{
+  margin-left: 10px;
+  float: left;
+}
+
 #error{
   color: red;
   font-weight: bold;
@@ -67,7 +72,11 @@ input {
   width: 250px;
 }
 
-input.submitinput{
+input.submitinput {
+  width: 80%;
+}
+
+input.reviewinput{
   width: 80%;
 }
 

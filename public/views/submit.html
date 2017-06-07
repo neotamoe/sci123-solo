@@ -1,58 +1,63 @@
 <div ng-controller="UserController as uc" class="container">
   <h3 id="welcome">Welcome, {{uc.userName}}!</h3>
+  <a href="#/user"><md-button id="mainbtn" class="md-raised md-accent">Main</md-button></a>
   <a href="#/review"><md-button id="reviewbtn" class="md-raised md-accent" ng-if="uc.adminStatus===true">Review Submitted Questions</md-button></a>
-  <a href="#/add"><md-button id="addbtn" class="md-raised md-accent">Submit a New Question</md-button></a>
   <md-button id="logoutbtn" class="md-raised md-accent" ng-click="uc.logout()">Log Out</md-button>
   <span id="points">Points: {{uc.points}}</span>
 </div>
 <div class="container">
   <p><span id="instructions">IMPORTANT!  Please read and follow these instructions:</span> <br>
-    For Chapter, enter Chapter x, Appendix or Measurement Appendix.  Match capital letter use exactly.  For
-    Source, enter only the chapter number.  For Appendix, enter 16.  For Measurement Appendix, enter 17.  For question and
+    For Source, enter Chapter x (e.g. Chapter 3), Appendix or Measurement Appendix.  Match capital letter use exactly.  For
+    Chapter, enter only the chapter number (e.g. 3).  For Appendix, enter 16.  For Measurement Appendix, enter 17.  For question and
     choices (a,b,c,d), enter text without restating the category (e.g. do not add A: to your answer for a).  Write out special
     characters or use unicode for things like degrees &deg; and ampersand &amp;.  For answerEnter correct answer using
     capital letter with no punctuation.</p>
 </div>
-<div class="container">
-  <label for="chapter" class="submit">Chapter:</label>
-  <input class="submitinput" type="text" name="chapter" value="" placeholder="Chapter x, Appendix, or Measurement Appendix" ng-model=""><br>
+<form action="" method="post">
+  <div class="container">
 
-  <label for="source" class="submit">Source:</label>
-  <input class="submitinput" type="text" name="source" value="" placeholder="chapter number only (e.g. 3)" ng-model=""><br>
+    <label for="chapter" class="submit">Chapter:</label>
+    <input class="submitinput" type="number" name="chapter" value="" placeholder="chapter number only (e.g. 3)" ng-model=""><br>
 
-  <label for="page" class="submit">Page:</label>
-  <input class="submitinput" type="text" name="page" value="" placeholder="page number only (e.g. 250)" ng-model=""><br>
+    <label for="source" class="submit">Source:</label>
+    <input class="submitinput" type="text" name="source" value="" placeholder="Chapter# (e.g. 4), Appendix, or Measurement Appendix" ng-model=""><br>
 
-  <label for="question" class="submit">Question:</label>
-  <input class="submitinput" type="text" name="question" value="" placeholder="question text" ng-model=""><br>
+    <label for="page" class="submit">Page:</label>
+    <input class="submitinput" type="number" name="page" value="" placeholder="page number only (e.g. 250)" ng-model=""><br>
 
-  <label for="a" class="submit">A:</label>
-  <input class="submitinput" type="text" name="a" value="" placeholder="multiple choice text" ng-model=""><br>
+    <label for="question" class="submit">Question:</label>
+    <input class="submitinput" type="text" name="question" value="" placeholder="question text" ng-model=""><br>
 
-  <label for="b" class="submit">B:</label>
-  <input class="submitinput" type="text" name="b" value="" placeholder="multiple choice text" ng-model=""><br>
+    <label for="a" class="submit">A:</label>
+    <input class="submitinput" type="text" name="a" value="" placeholder="multiple choice text" ng-model=""><br>
 
-  <label for="c" class="submit">C:</label>
-  <input class="submitinput" type="text" name="c" value="" placeholder="multiple choice text" ng-model=""><br>
+    <label for="b" class="submit">B:</label>
+    <input class="submitinput" type="text" name="b" value="" placeholder="multiple choice text" ng-model=""><br>
 
-  <label for="d" class="submit">D:</label>
-  <input class="submitinput" type="text" name="d" value="" placeholder="multiple choice text" ng-model=""><br>
+    <label for="c" class="submit">C:</label>
+    <input class="submitinput" type="text" name="c" value="" placeholder="multiple choice text" ng-model=""><br>
 
-  <label for="answer" class="submit">Answer:</label>
-  <input class="submitinput" type="text" name="answer" value="" placeholder="capital letter of correct answer (e.g. A)" ng-model="">
-</div><br>
+    <label for="d" class="submit">D:</label>
+    <input class="submitinput" type="text" name="d" value="" placeholder="multiple choice text" ng-model=""><br>
+
+    <label for="answer" class="submit">Answer:</label>
+    <input class="submitinput" type="text" name="answer" value="" placeholder="capital letter of correct answer (e.g. A)" ng-model="">
+
+  </div><br>
   <!-- tags to be added via checkboxes -->
-<div class="container">
-  <p><br><span><strong>Add up to 3 tags:</strong></span></p>
-</div>
-<div class="md-padding checkbox container" ng-cloak="">
-  <div layout="row" layout-wrap>
-    <div layout="column">
-      <div layout="row" layout-wrap flex>
-        <div flex-offset="5" flex="20" ng-repeat="item in sc.items track by $index">
-          <md-checkbox ng-model="checkmark" ng-change="sc.checkChanged(item)" ng-disabled="sc.checked==sc.limit && !checkmark" ng-checked="sc.exists(item, sc.selected)" ng-click="sc.toggle(item, sc.selected)">{{ item }}</md-checkbox>
+  <div class="container">
+    <p><br><span><strong>Add up to 3 tags:</strong></span></p>
+  </div>
+  <div class="md-padding checkbox container" ng-cloak="">
+    <div layout="row" layout-wrap>
+      <div layout="column">
+        <div layout="row" layout-wrap flex>
+          <div flex-offset="5" flex="20" ng-repeat="item in sc.items track by $index">
+            <md-checkbox ng-model="checkmark" ng-change="sc.checkChanged(item)" ng-disabled="sc.checked==sc.limit && !checkmark" ng-checked="sc.exists(item, sc.selected)" ng-click="sc.toggle(item, sc.selected)">{{ item }}</md-checkbox>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <md-button type="submit" id="addbtn" class="md-raised md-accent" ng-click="studentSubmit()">Done</md-button></a>
+</form>

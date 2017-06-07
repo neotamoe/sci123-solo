@@ -3,10 +3,12 @@
   <a href="#/user"><md-button id="mainbtn" class="md-raised md-accent">Main</md-button></a>
   <md-button id="logoutbtn" class="md-raised md-accent" ng-click="uc.logout()">Log Out</md-button>
 </div>
+
 <div class="container">
   <h3 ng-if="!rc.toReview.length">{{rc.nothingtoreview}}</h3>
-</div>
-<div ng-show="rc.toggle" class="container" ng-repeat="x in rc.toReview">
+</div><br>
+
+<div ng-show="rc.show" class="container" ng-repeat="x in rc.toReview">
   <div ng-if="rc.toReview_index == $index">
     <!-- <label for="question input">Question: </label><input type="text" name="question" value="{{x.question}}"> -->
     <h3>Question: {{x.question}}</h3>
@@ -19,30 +21,31 @@
     <p>Source: {{x.source}}</p>
     <p>Page: {{x.page}}.</p>
     <p>Tags: {{x.tags}}</p>
-    <p ng-if="rc.approveStatus===true" class="answer" ng-style="rc.approveMessage==='Question approved.  Click next.' && {'color':'green'}">{{rc.approveMessage}}</p>
-    <p ng-if="rc.deleteStatus===true" class="answer" ng-style="rc.deleteMessage==='Question deleted.  Click next.' && {'color':'green'}">{{rc.deleteMessage}}</p>
+    <p ng-if="rc.approveStatus===true" class="answer" ng-style="rc.approveMessage==='Question approved and saved in database.' && {'color':'green'}">{{rc.approveMessage}}</p>
+    <p ng-if="rc.deleteStatus===true" class="answer" ng-style="rc.deleteMessage==='Question deleted from database.' && {'color':'green'}">{{rc.deleteMessage}}</p>
     <md-button class="md-accent md-raised" ng-click="rc.approve(x._id)">Approve</md-button>
     <md-button class="md-accent md-raised" ng-click="rc.delete(x._id)">Delete</md-button>
+    <md-button class="md-accent md-raised" ng-click="rc.edit()">Edit</md-button>
     <md-button class="md-accent md-raised" ng-click="rc.next()">Next/Skip</md-button>
   </div>
-</div>
-<div ng-hide="rc.toggle" class="container" ng-repeat="x in rc.toReview">
+</div><br>
+
+<div ng-hide="rc.hide" class="container" ng-repeat="x in rc.toReview">
   <div ng-if="rc.toReview_index == $index">
-    <!-- <label for="question input">Question: </label><input type="text" name="question" value="{{x.question}}"> -->
-    <h3>Question: {{x.question}}</h3>
-    <p>A: {{x.a}}</p>
-    <p>B: {{x.b}}</p>
-    <p>C: {{x.c}}</p>
-    <p>D: {{x.d}}</p>
-    <p>Answer: {{x.answer}}</p>
-    <p>Chapter: {{x.chapter}}</p>
-    <p>Source: {{x.source}}</p>
-    <p>Page: {{x.page}}.</p>
-    <p>Tags: {{x.tags}}</p>
-    <p ng-if="rc.approveStatus===true" class="answer" ng-style="rc.approveMessage==='Question approved.  Click next.' && {'color':'green'}">{{rc.approveMessage}}</p>
-    <p ng-if="rc.deleteStatus===true" class="answer" ng-style="rc.deleteMessage==='Question deleted.  Click next.' && {'color':'green'}">{{rc.deleteMessage}}</p>
-    <md-button class="md-accent md-raised" ng-click="rc.approve(x._id)">Approve</md-button>
-    <md-button class="md-accent md-raised" ng-click="rc.delete(x._id)">Delete</md-button>
-    <md-button class="md-accent md-raised" ng-click="rc.next()">Next/Skip</md-button>
+    <label for="question input">Question: </label><input class="reviewinput" type="text" name="question" value="{{x.question}}">
+    <label for="choice a">A: </label><input class="reviewinput" type="text" name="" value="{{x.a}}">
+    <label for="choice b">B: </label><input class="reviewinput" type="text" name="" value="{{x.b}}">
+    <label for="choice c">C: </label><input class="reviewinput" type="text" name="" value="{{x.c}}">
+    <label for="choice d">D: </label><input class="reviewinput" type="text" name="" value="{{x.d}}">
+    <label for="answer">Answer: </label><input class="reviewinput" type="text" name="" value="{{x.answer}}">
+    <label for="chapter">Chapter: </label><input class="reviewinput" type="number" name="" value="{{x.chapter}}">
+    <label for="source">Source: </label><input class="reviewinput" type="text" name="" value="{{x.source}}">
+    <label for="page">Page: </label><input class="reviewinput" type="number" name="" value="{{x.page}}">
+    <label for="tags">Tags: </label><input class="reviewinput" type="text" name="" value="{{x.tags}}">
+    <p>Current Tags: Chemistry, Science, Phases, Energy, Molecules, Water, Proteins, Measurement,
+      Milk, Nutrition, Food Science, History, Coffee, Lipids, Baking, Cake, Flour, Heat Transfer, Cakes, Carbohydrates,
+      Yeast, pH, Cereal & Batters, Fermentation, Bread, Eggs, Sauces, Desserts, Alcohol, Cooking, Nutrition, Vinegar,
+      Meat, Emulsions, Fish & Shellfish, Fruits & Vegetables, Preservation, Seeds</p>
+    <md-button class="md-accent md-raised" id="savebtn" ng-click="rc.save(x)">Save</md-button>
   </div>
 </div>
