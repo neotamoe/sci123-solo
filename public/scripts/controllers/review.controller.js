@@ -53,7 +53,8 @@ myApp.controller('ReviewController', ['$http', '$location', 'questionsService', 
     if (vm.toReview_index >= vm.toReview.length - 1) {
       $location.path("/user");
     } else {
-      vm.approve = false;
+      vm.approveStatus = false;
+      vm.deleteStatus = false;
       vm.toReview_index++;
     }
     console.log('index:' + vm.toReview_index + '/' + 'length-1:' + vm.toReview.length-1);
@@ -70,7 +71,6 @@ myApp.controller('ReviewController', ['$http', '$location', 'questionsService', 
   vm.deleteStatus = false;
   vm.approveMessage = "Question approved and saved in database.";
   vm.deleteMessage = "Question deleted from database.";
-  // vm.saveMessage = "Question saved in database for future review and approval.";
   vm.nothingtoreview = "No new questions to review.";
 
   vm.save = function(){

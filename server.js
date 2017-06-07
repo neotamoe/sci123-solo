@@ -15,6 +15,7 @@ var questions = require('./routes/questions');
 var box = require ('./routes/box');
 var points = require ('./routes/points');
 var pending = require('./routes/pending');
+var submit = require ('./routes/submit');
 
 // body parser middleware
 app.use(bodyParser.json());
@@ -43,6 +44,7 @@ app.use('/box/',box);
 app.use('/questions/', questions);
 app.use('/points', points);
 app.use('/pending/', pending);
+app.use('/submit', submit);
 app.use('/*', index);
 
 // Mongo Connection //

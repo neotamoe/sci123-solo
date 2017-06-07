@@ -10,9 +10,10 @@ router.post('/', function(req, res) {
   if(req.isAuthenticated()) {
     // send back user object from database
     console.log('still logged in');
-    // questionsModel.insert({req.body}).then(function(){
-      res.sendStatus('hip hip hooray');
-    // });
+    var addQuestion = questionsModel(req.body);
+    addQuestion.save(req.body).then(function(data){
+      res.sendStatus(200);
+    });
   } else {
     // failure best handled on the server. do redirect here.
     console.log('not logged in');

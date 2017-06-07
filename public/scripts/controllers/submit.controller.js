@@ -34,8 +34,6 @@ myApp.controller('SubmitController', ['$http', '$location', 'questionsService', 
     return list.indexOf(item) > -1;
   };
 
-
-
   vm.studentSubmit = function(){
     vm.submit = {
       source: vm.submit.source,
@@ -48,13 +46,22 @@ myApp.controller('SubmitController', ['$http', '$location', 'questionsService', 
       answer: vm.submit.answer,
       page: vm.submit.page,
       tags: vm.selected,
+      display: 'false'
     };
     ReviewSubmitService.studentSubmit(vm.submit).then(function(data){
       console.log('data:', data);
       if(data.status===200){
-        console.log('quesiton successfully submitted to database');
+        console.log('question successfully submitted to database');
+        vm.thanks = 'Success!  Your question will be reviewed for inclusion in the quiz database.';
+        vm.receivedStatus = true;
       }
     });
+  };
+
+  vm.clearForm = function(){
+    submitform.reset();
+    vm.selected=[];
+    vm.receivedStatus = false;
   };
 
 }]);  // end SubmitController

@@ -32,20 +32,23 @@
 
 <div ng-hide="rc.hide" class="container" ng-repeat="x in rc.toReview">
   <div ng-if="rc.toReview_index == $index">
-    <label for="question input">Question: </label><input class="reviewinput" type="text" name="question" value="{{x.question}}">
-    <label for="choice a">A: </label><input class="reviewinput" type="text" name="" value="{{x.a}}">
-    <label for="choice b">B: </label><input class="reviewinput" type="text" name="" value="{{x.b}}">
-    <label for="choice c">C: </label><input class="reviewinput" type="text" name="" value="{{x.c}}">
-    <label for="choice d">D: </label><input class="reviewinput" type="text" name="" value="{{x.d}}">
-    <label for="answer">Answer: </label><input class="reviewinput" type="text" name="" value="{{x.answer}}">
-    <label for="chapter">Chapter: </label><input class="reviewinput" type="number" name="" value="{{x.chapter}}">
-    <label for="source">Source: </label><input class="reviewinput" type="text" name="" value="{{x.source}}">
-    <label for="page">Page: </label><input class="reviewinput" type="number" name="" value="{{x.page}}">
-    <label for="tags">Tags: </label><input class="reviewinput" type="text" name="" value="{{x.tags}}">
-    <p>Current Tags: Chemistry, Science, Phases, Energy, Molecules, Water, Proteins, Measurement,
-      Milk, Nutrition, Food Science, History, Coffee, Lipids, Baking, Cake, Flour, Heat Transfer, Cakes, Carbohydrates,
-      Yeast, pH, Cereal & Batters, Fermentation, Bread, Eggs, Sauces, Desserts, Alcohol, Cooking, Nutrition, Vinegar,
-      Meat, Emulsions, Fish & Shellfish, Fruits & Vegetables, Preservation, Seeds</p>
+    <form>
+      <label for="question input">Question: </label><input class="reviewinput" type="text" value="{{x.question}}" ng-model="x.question"></input>
+      <label for="choice a">A: </label><input class="reviewinput" type="text" value="{{x.a}}" ng-model="x.a"></input>
+      <label for="choice b">B: </label><input class="reviewinput" type="text" value="{{x.b}}" ng-model="x.b"></input>
+      <label for="choice c">C: </label><input class="reviewinput" type="text" value="{{x.c}}" ng-model="x.c"></input>
+      <label for="choice d">D: </label><input class="reviewinput" type="text" value="{{x.d}}" ng-model="x.d"></input>
+      <label for="answer">Answer: </label><input class="reviewinput" type="text" value="{{x.answer}}" ng-model="x.answer"></input>
+      <label for="chapter">Chapter: </label><input class="reviewinput" type="number" value="{{x.chapter}}" ng-model="x.chapter"></input>
+      <label for="source">Source: </label><input class="reviewinput" type="text" value="{{x.source}}" ng-model="x.source"></input>
+      <label for="page">Page: </label><input class="reviewinput" type="number" value="{{x.page}}" ng-model="x.page"></input>
+      <label for="tags">Tags: </label><input class="reviewinput" type="text" value="{{x.tags}}" ng-model="x.tags"></input>
+    </form>
+    <br>
+    <p>Current Tags: Alcohol, Baking, Bread, Cake, Carbohydrates, Cereal & Batters, Chemistry, Coffee, Cooking,
+        Desserts, Eggs, Emulsions, Energy, Fermentation, Fish & Shellfish, Flour, Food Science, Fruits & Vegetables, Heat Transfer,
+        History, Lipids, Measurement, Meat, Milk, Molecules, Nutrition, Phases, Preservation, Proteins, Sauces, Science,
+        Seeds, Vinegar, Water, Yeast, pH</p>
     <md-button class="md-accent md-raised" id="savebtn" ng-click="rc.save(x)">Save</md-button>
   </div>
 </div>
