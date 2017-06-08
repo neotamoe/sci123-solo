@@ -6,7 +6,7 @@ var User = require ('./user.model');
 // schema
 var QuestionSchema = new Schema({
   userId:{type: Schema.Types.ObjectId, ref: 'User', required: true},
-  // userEmail: String,
+  userEmail: {type: Schema.Types.String, ref:'User', required: true},
   dateCreated: {type: Date, default: Date.now},
   chapter: Number,
   source: String,

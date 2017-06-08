@@ -3,8 +3,6 @@ myApp.controller('ReviewController', ['$http', '$location', 'questionsService', 
 
   console.log('ReviewController loaded');
 
-
-
   $http.get('/user').then(function(response) {
     if(response.data.email) {
       // user has a current session on the server
@@ -32,6 +30,7 @@ myApp.controller('ReviewController', ['$http', '$location', 'questionsService', 
       console.log('logging response to see if status code is here:', response +'or response.status:', response.status);
       if(response.status===200){
         vm.approveStatus = true;
+        vm.clicked = true;
       }
     });
   };
@@ -41,6 +40,7 @@ myApp.controller('ReviewController', ['$http', '$location', 'questionsService', 
       console.log('data:', data);
       if(data.status===200){
         vm.deleteStatus = true;
+        vm.clicked = true;
       }
     });
   };
@@ -55,6 +55,7 @@ myApp.controller('ReviewController', ['$http', '$location', 'questionsService', 
     } else {
       vm.approveStatus = false;
       vm.deleteStatus = false;
+      vm.clicked = false;
       vm.toReview_index++;
     }
     console.log('index:' + vm.toReview_index + '/' + 'length-1:' + vm.toReview.length-1);
@@ -72,6 +73,7 @@ myApp.controller('ReviewController', ['$http', '$location', 'questionsService', 
   vm.approveMessage = "Question approved and saved in database.";
   vm.deleteMessage = "Question deleted from database.";
   vm.nothingtoreview = "No new questions to review.";
+  vm.clicked = false;
 
   vm.save = function(){
     ReviewSubmitService.savePending(vm.toReview[vm.toReview_index]).then(function(data){

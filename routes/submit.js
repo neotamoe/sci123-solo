@@ -15,6 +15,7 @@ router.post('/', function(req, res) {
     // addQuestion.userId = req.user._id;
     var newQuestion = req.body;
     newQuestion.userId = req.user._id;
+    newQuestion.userEmail = req.user.email;
     var addQuestion = questionsModel(newQuestion);
     addQuestion.save().then(function(data){
       res.sendStatus(200);
