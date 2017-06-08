@@ -2,7 +2,7 @@
   <h3 id="welcome">Welcome, {{uc.userName}}!</h3>
   <a href="#/review"><md-button id="reviewbtn" class="md-raised md-accent" ng-if="uc.adminStatus===true">Review Submitted Questions</md-button></a>
   <a href="#/submit"><md-button id="addbtn" class="md-raised md-accent">Submit a New Question</md-button></a>
-  <md-button id="logoutbtn" class="md-raised md-accent" ng-click="uc.logout()">Log Out</md-button>
+  <md-button id="logoutbtn" class="md-raised md-warn" ng-click="uc.logout()">Log Out</md-button>
   <span id="points">Points: {{uc.points}}</span>
 </div>
 <div class="container">
