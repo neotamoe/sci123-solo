@@ -4,7 +4,6 @@ myApp.controller('LoginController', ['$http', '$location', function($http, $loca
 
     vm.user = {
       email: '',
-      // firstName: '',
       password: ''
     };
     vm.message = '';

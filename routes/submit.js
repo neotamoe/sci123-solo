@@ -56,5 +56,23 @@ router.post('/', function(req, res) {
   }
 });
 
+router.put('/:id', function(req, res) {
+  console.log(' in put route to flag questions: req.params.id-->', req.params.id);
+  var objectid=req.params.id;
+  // check if logged in
+  if(req.isAuthenticated()) {
+    // send back user object from database
+    console.log('still logged in');
+    questionsModel.findOneAndUpdate({_id:objectid},{display:'false'}).then(function(){
+      res.sendStatus(200);
+    });
+  } else {
+    // failure best handled on the server. do redirect here.
+    console.log('not logged in');
+    $location.path("/home");
+    res.sendStatus(403);
+  }
+});
+
 
 module.exports = router;

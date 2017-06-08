@@ -15,6 +15,10 @@ augsburg color: #650a34
   float: left;
 }
 
+#hint{
+  font-size: 20px;
+}
+
 .green{
   color:green;
   font-size: 36px;

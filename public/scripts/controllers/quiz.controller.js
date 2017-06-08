@@ -52,13 +52,15 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
   vm.next = function () {
     vm.showMessage = false;
     vm.buttonDisabled = false;
+    vm.flagIn = false;
     if (vm.fiveData_index >= vm.fiveData.length - 1) {
       // vm.fiveData_index = 0;
       $location.path("/endquiz");
     } else {
       vm.fiveData_index++;
     }
-    console.log('index' + vm.fiveData_index + '/' + 'total(length-1)' + vm.fiveData.length-1);
+    console.log('index' + vm.fiveData_index + '/' + 'length' + vm.fiveData.length);
+
   };
 
   vm.check = function(answer){
@@ -73,6 +75,17 @@ myApp.controller('QuizController', ['$http', '$location', 'questionsService', '$
     } else{
       vm.message = 'INCORRECT.  The correct answer is ' + vm.fiveData[vm.fiveData_index].answer + '.';
     }
+  };
+
+  vm.flagIn = false;
+
+  vm.flag = function(){
+    console.log('in flag message function');
+    questionsService.flag(vm.fiveData[vm.fiveData_index]._id).then(function(){
+      // add message here saying question was flagged for review in database
+      vm.flagIn = true;
+      vm.flagMessage = "Thanks!  Question flagged and submitted to database for review.";
+    });
   };
 
 }]);  // end QuizController

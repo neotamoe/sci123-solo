@@ -71,6 +71,7 @@ myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'question
   vm.next = function () {
     vm.showMessage = false;
     vm.buttonDisabled = false;
+    vm.flagIn = false;
     if (vm.fiveData_index >= vm.fiveData.length - 1) {
       // vm.fiveData_index = 0;
       $location.path("/endquiz");
@@ -94,5 +95,14 @@ myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'question
     }
   };
 
+  vm.flagIn = false;
+
+  vm.flag = function(){
+    console.log('in flag message function');
+    questionsService.flag(vm.fiveData[vm.fiveData_index]._id).then(function(){
+      vm.flagIn = true;
+      vm.flagMessage = "Thanks!  Question flagged and submitted to database for review.";
+    });
+  };
 
 }]);  // end QuizBoxController

@@ -42,7 +42,7 @@
 	- [x] basic input styling
 	- [x] check admin email address to be used for nodemailer
 	- [x] attach user info to question submitted
-	- [ ] display user info on question submitted on review page
+	- [x] display user info on question submitted on review page
 * [x] Administrator able to accept or decline student-submitted question for inclusion into database - 6/9/17    
 	- [x] approve/deny buttons working (ensure status in database changes upon click)
 	- [x] administrator able to edit fields of submitted question

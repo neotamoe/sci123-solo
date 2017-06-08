@@ -71,4 +71,16 @@ myApp.service('questionsService', function($http,$routeParams,$route){
       return response.data;
     });
   };
+
+  self.flag = function(id){
+    console.log('in flag function in service');
+    return $http({
+      method:'PUT',
+      url:'/submit/' + id,
+    }).then(function(response){
+      console.log('flag response:', response);
+      return response;
+    });
+  };
+
 });  // end questionService
