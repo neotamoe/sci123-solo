@@ -22,7 +22,7 @@ router.get('/', function(req, res) {
   }
 });
 
-router.post('/:id', function(req, res) {
+router.put('/:id', function(req, res) {
   console.log(' in post route to approve pending questions: req.params.id-->', req.params.id);
   var objectid=req.params.id;
   // check if logged in

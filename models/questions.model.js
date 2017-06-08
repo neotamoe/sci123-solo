@@ -1,9 +1,13 @@
 // requires
 var mongoose = require ('mongoose');
 var Schema = mongoose.Schema;
+var User = require ('./user.model');
 
 // schema
 var QuestionSchema = new Schema({
+  userId:{type: Schema.Types.ObjectId, ref: 'User'},
+  userEmail: String,
+  dateCreated: {type: Date, default: Date.now},
   chapter: Number,
   source: String,
   page: Number,
@@ -14,7 +18,7 @@ var QuestionSchema = new Schema({
   d: String,
   answer: String,
   tags: Array,
-  display: String,
+  display: {type:String, required:true, default: 'false'}
 });
 
 // model

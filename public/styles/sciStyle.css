@@ -15,6 +15,12 @@ augsburg color: #650a34
   float: left;
 }
 
+.green{
+  color:green;
+  font-size: 36px;
+  font-weight: bold;
+}
+
 #cancelbtn{
   display: inline;
   float: left;
@@ -34,8 +40,8 @@ augsburg color: #650a34
   display: inline;
   margin-left: 25px;
 }
-h1,h2,h3{
 
+h1,h2,h3{
   font-family: 'Candal', sans-serif;
 }
 

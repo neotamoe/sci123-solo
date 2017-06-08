@@ -14,9 +14,9 @@ myApp.service('ReviewSubmitService', function($http,$routeParams,$route){
   };
 
   self.approvePending = function(id){
-    console.log('in POST approvePending');
+    console.log('in PUT approvePending');
     return $http({
-      method:'POST',
+      method:'PUT',
       url:'/pending/' + id,
     }).then(function(response){
       console.log('approve pending service response:', response);
@@ -59,11 +59,6 @@ myApp.service('ReviewSubmitService', function($http,$routeParams,$route){
     });
   };
 
-  // self.sendEmail = function (){
-  //   console.log('in sendEmail function in service');
-  //   $http({
-  //     method:
-  //   })
-  // }
+
 
 });  // end questionService
