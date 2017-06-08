@@ -61,12 +61,6 @@ body{
   display: inline;
 }
 
-.instructions .container h1 {
-    font-size: 36px;
-    font-weight: 700;
-    text-align: center;
-}
-
 label.submit{
   text-align: right;
   margin-right: 10px;
@@ -96,17 +90,8 @@ input.reviewinput{
   width: 80%;
 }
 
-/*.flex-container{
-  display: flex;
-  flex-direction: column;
-}*/
-
 .currentTags{
   float: left;
-}
-
-.instructions {
-    height: 100px;
 }
 
 .answer {
@@ -115,38 +100,11 @@ input.reviewinput{
   font-size: 36px;
 }
 
-#entryForm {
-    margin-top: 14px;
-}
-
-#container {
-    margin-top: 10px;
-}
 
 .container{
   margin: 10px;
 }
 
-.container p{
-    margin-top : 14px;
-}
-
-.message {
-    padding: 10px 0;
-}
-
-.message p {
-    margin-left: 10px;
-}
-
-.message:nth-child(odd) {
-     background-color: #eeeeee;
-}
-
-.message:nth-child(even) {
-    background-color: #f8f8f8;
-}
-
-.btn-danger{
-    margin-left: 10px;
+.container p {
+  margin-top : 15px;
 }
