@@ -5,8 +5,8 @@ var User = require ('./user.model');
 
 // schema
 var QuestionSchema = new Schema({
-  userId:{type: Schema.Types.ObjectId, ref: 'User'},
-  userEmail: String,
+  userId:{type: Schema.Types.ObjectId, ref: 'User', required: true},
+  // userEmail: String,
   dateCreated: {type: Date, default: Date.now},
   chapter: Number,
   source: String,

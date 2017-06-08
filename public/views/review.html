@@ -21,6 +21,7 @@
     <p>Source: {{x.source}}</p>
     <p>Page: {{x.page}}.</p>
     <p>Tags: {{x.tags}}</p>
+    <p>Submitted by: {{x.userId}}</p>
     <p ng-if="rc.approveStatus===true" class="answer" ng-style="rc.approveMessage==='Question approved and saved in database.' && {'color':'green'}">{{rc.approveMessage}}</p>
     <p ng-if="rc.deleteStatus===true" class="answer" ng-style="rc.deleteMessage==='Question deleted from database.' && {'color':'green'}">{{rc.deleteMessage}}</p>
     <md-button class="md-accent md-raised" ng-click="rc.approve(x._id)">Approve</md-button>

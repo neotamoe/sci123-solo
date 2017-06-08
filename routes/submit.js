@@ -11,8 +11,12 @@ router.post('/', function(req, res) {
   if(req.isAuthenticated()) {
     // send back user object from database
     console.log('still logged in');
-    var addQuestion = questionsModel(req.body);
-    addQuestion.save(req.body).then(function(data){
+    // var addQuestion = req.body;
+    // addQuestion.userId = req.user._id;
+    var newQuestion = req.body;
+    newQuestion.userId = req.user._id;
+    var addQuestion = questionsModel(newQuestion);
+    addQuestion.save().then(function(data){
       res.sendStatus(200);
     });
 
@@ -29,9 +33,9 @@ router.post('/', function(req, res) {
 
     // setup email data with unicode symbols
     var mailOptions = {
-        from: '"Science123 Quiz" <science123app@gmail.com>', // sender address
-        to: 'neota.moe@gmail.com', // list of receivers
-        subject: 'Question added and ready for review', // Subject line
+        from: '"Science123 Quiz" <science123app@gmail.com>',
+        to: '"Sci123App Admin" <science123app@gmail.com>',
+        subject: 'Question added and ready for review',
         text: 'Hello!  Someone added a question to the Science123 Quiz App.  Please log in to the app to review it for approval, denial or editing.', // plain text body
         html: '<h2>Hello!</h2><p>Someone added a question to the <strong>Science123 Quiz App.</strong>  Please log in to the app to review it for approval, denial or editing.</p>' // html body
     };

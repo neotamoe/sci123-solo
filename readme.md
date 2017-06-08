@@ -33,17 +33,20 @@
 	- [x] ensure checkboxes pulling questions and displaying 6/3
 	- [x] points calculating
 	- [x] add home button to all views
-* [x] Complete admin page/view - 6/6/17   
+* [x] Complete admin page/view - 6/6/17
 	- [x]make sure schema accounts for admin approval/denial of question
-* [ ] Nodemailer functional - 6/7/17
-	- will need help here!
+* [x] Nodemailer functional - 6/7/17
+	- [x] sends email upon student submission of question
 * [x] Student/user able to submit a question - 6/8/17  
 	- [x] checkboxes working for submission
 	- [x] basic input styling
 	- [x] check admin email address to be used for nodemailer
+	- [x] attach user info to question submitted
+	- [ ] display user info on question submitted on review page
 * [x] Administrator able to accept or decline student-submitted question for inclusion into database - 6/9/17    
 	- [x] approve/deny buttons working (ensure status in database changes upon click)
 	- [x] administrator able to edit fields of submitted question
+* [ ] Mobile-responsive for quiz
 * [ ] Deploy to Heroku - 6/12/17
 
 ##Project Overview
