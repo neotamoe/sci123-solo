@@ -64,6 +64,8 @@ myApp.controller('ReviewController', ['$http', '$location', 'questionsService', 
   vm.edit = function(){
     vm.hide=false;
     vm.show=false;
+    vm.clicked=false;
+    vm.approveStatus = false;
   };
 
   vm.show = true;

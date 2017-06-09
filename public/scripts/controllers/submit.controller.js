@@ -58,6 +58,7 @@ myApp.controller('SubmitController', ['$http', '$location', 'questionsService', 
     });
   };
 
+
   vm.clearForm = function(){
     submitform.reset();
     vm.selected=[];

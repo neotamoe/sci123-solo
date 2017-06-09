@@ -18,6 +18,6 @@
     <p ng-if="qbc.flagIn===true" class="green">{{qbc.flagMessage}}</p>
     <p ng-if="qbc.showMessage===true" class="answer" ng-style="qbc.message==='CORRECT!' && {'color':'green'}">{{qbc.message}}</p>
     <md-button class="md-accent md-raised" ng-click="qbc.next()">Continue/Skip</md-button>
-    <md-button class="md-accent md-raised md-warn" ng-click="qbc.flag(qbc._id)">Flag</md-button><em>Flag question as incorrect, poorly written or in need of review.</em>
+    <md-button class="md-raised md-warn" ng-click="qbc.flag(qbc._id)">Flag</md-button><em>Flag question as incorrect, poorly written or in need of review.</em>
   </div>
 </div>
