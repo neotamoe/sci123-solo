@@ -10,14 +10,19 @@ router.get('/', function(req, res) {
   if(req.isAuthenticated()) {
     // send back user object from database
     console.log('still logged in');
-    userModel.find({email: req.user.email}).then(function(data){
-      console.log('data for points query-->', data);
-      res.send(data);
+    userModel.find({email: req.user.email}, function(err, data){
+      if (err) {
+        console.log('Database Error: ', err);
+        res.sendStatus(500);
+      } else {
+        console.log('data for points query-->', data);
+        res.send(data);
+      }
     });
   } else {
     // failure best handled on the server. do redirect here.
     console.log('not logged in');
-    $location.path("/home");
+    $location.path('/home');
     res.sendStatus(403);
   }
 });
@@ -28,14 +33,19 @@ router.post('/', function(req, res) {
   if(req.isAuthenticated()) {
     // send back user object from database
     console.log('still logged in');
-    userModel.findOneAndUpdate({email:req.body.email},{points:req.body.points}).then(function(data){
-      console.log('data for points post-->', data);
-      res.send(data);
+    userModel.findOneAndUpdate({email:req.body.email},{points:req.body.points}, function(err, data){
+      if (err) {
+        console.log('Database Error: ', err);
+        res.sendStatus(500);
+      } else{
+        console.log('data for points post-->', data);
+        res.send(data);
+      }
     });
   } else {
     // failure best handled on the server. do redirect here.
     console.log('not logged in');
-    $location.path("/home");
+    $location.path('/home');
     res.sendStatus(403);
   }
 });

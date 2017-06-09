@@ -12,13 +12,19 @@ router.get('/:chapter', function(req, res) {
   if(req.isAuthenticated()) {
     // send back user object from database
     console.log('still logged in');
-    questionsModel.aggregate([{$match: {display:'true', chapter:currentChapter}},{$sample:{size:5}}]).then(function(data){
-      console.log('data for chapter' + currentChapter + '-->', data);
-      res.send(data);
+    questionsModel.aggregate([{$match: {display:'true', chapter:currentChapter}},{$sample:{size:5}}], function(err, data){
+      if (err) {
+        console.log('Database Error: ', err);
+        res.sendStatus(500);
+      } else{
+        console.log('data for chapter' + currentChapter + '-->', data);
+        res.send(data);
+      }
     });
   } else {
     // failure best handled on the server. do redirect here.
     console.log('not logged in');
+    $location.path('/home');
     res.sendStatus(403);
   }
 });
@@ -30,7 +36,7 @@ router.get('/', function(req, res) {
   if(req.isAuthenticated()) {
     // send back user object from database
     console.log('still logged in');
-    questionsModel.distinct('tags').sort().then( function(data) {
+    questionsModel.distinct('tags').sort().then(function(data) {
       console.log('data for tags-->', data);
       res.send(data);
     });
@@ -41,8 +47,6 @@ router.get('/', function(req, res) {
     res.sendStatus(403);
   }
 });
-
-
 
 
 module.exports = router;
