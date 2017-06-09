@@ -7,7 +7,8 @@ var questionsModel = require('../models/questions.model');
 router.get('/', function(req, res) {
   console.log(' in get route for pending questions');
   // check if logged in
-  if(req.isAuthenticated()) {
+  console.log('in get pending route: req.user: ', req.user);
+  if(req.isAuthenticated() && req.user.admin===true) {
     // send back user object from database
     console.log('still logged in');
     questionsModel.find({display:'false'}).then(function(data){
@@ -26,7 +27,8 @@ router.put('/:id', function(req, res) {
   console.log(' in post route to approve pending questions: req.params.id-->', req.params.id);
   var objectid=req.params.id;
   // check if logged in
-  if(req.isAuthenticated()) {
+  console.log('in put route: req.user', req.user);
+  if(req.isAuthenticated() && req.user.admin===true) {
     // send back user object from database
     console.log('still logged in');
     questionsModel.findOneAndUpdate({_id:objectid},{display:'true'}).then(function(){
@@ -45,7 +47,7 @@ router.delete('/:id', function(req, res) {
   console.log(' in post route to approve pending questions: req.params.id-->', req.params.id);
   var objectid=req.params.id;
   // check if logged in
-  if(req.isAuthenticated()) {
+  if(req.isAuthenticated() && req.user.admin===true) {
     // send back user object from database
     console.log('still logged in');
     questionsModel.findOneAndRemove({_id:objectid}).then(function(){
@@ -62,7 +64,7 @@ router.delete('/:id', function(req, res) {
 router.post('/', function(req, res) {
   console.log(' in post route to save pending questions: req.body-->', req.body);
   // check if logged in
-  if(req.isAuthenticated()) {
+  if(req.isAuthenticated() && req.user.admin===true) {
     // send back user object from database
     console.log('still logged in');
     questionsModel.update({_id:req.body._id},{
