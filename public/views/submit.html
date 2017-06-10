@@ -1,10 +1,10 @@
 <!-- this div on UserController -->
 <div ng-controller="UserController as uc" class="container">
   <h3 id="welcome">Welcome, {{uc.userName}}!</h3>
-  <md-button ng-href="#/user" id="mainbtn" class="md-raised md-accent">Main</md-button>
-  <md-button ng-href="#/review" id="reviewbtn" class="md-raised md-accent" ng-if="uc.adminStatus===true">Review Submitted Questions</md-button>
-  <md-button id="logoutbtn" class="md-raised md-warn" ng-click="uc.logout()">Log Out</md-button>
-  <span id="points">Points: {{uc.points}}</span>
+  <md-button ng-href="#/user" class="md-raised md-accent">Main</md-button>
+  <md-button ng-href="#/review" class="md-raised md-accent" ng-if="uc.adminStatus===true">Review Submitted Questions</md-button>
+  <md-button class="logoutbtn md-raised md-warn" ng-click="uc.logout()">Log Out</md-button>
+  <span class="points">Points: {{uc.points}}</span>
 </div>
 <!-- remainder of page on SubmitController -->
 <!-- instructions to student user -->
@@ -66,6 +66,6 @@
 </form>
 <div class="container">
   <p class="green" ng-show="sc.receivedStatus">{{sc.thanks}}</p>
-  <md-button type="submit" ng-disabled="sc.receivedStatus" id="addbtn" class="md-raised md-accent" ng-click="sc.studentSubmit(sc.submit)">Submit</md-button></a>
-  <md-button type="submit" id="addbtn" class="md-raised md-accent" ng-click="sc.clearForm()">Clear Form</md-button></a>
+  <md-button type="submit" ng-disabled="sc.receivedStatus" class="addbtn md-raised md-accent" ng-click="sc.studentSubmit(sc.submit)">Submit</md-button></a>
+  <md-button type="submit" class="addbtn md-raised md-accent" ng-click="sc.clearForm()">Clear Form</md-button></a>
 </div>

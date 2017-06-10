@@ -1,33 +1,27 @@
+// requires
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var path = require('path');
 var UserModel = require('../models/user.model');
 
-// Handles Ajax request for user information if user is authenticated
+// GET user information and check if user is authenticated
 router.get('/', function(req, res) {
-  console.log('get /user route');
-  // check if logged in
+  // check if user is logged in & send back user object from database
   if(req.isAuthenticated()) {
-    // send back user object from database
-    console.log('logged in');
     res.send(req.user);
-    console.log(req.user);
   } else {
-    // failure best handled on the server. do redirect here.
-    console.log('not logged in');
-    $location.path("/home");
+    // redirect to /home if not logged in
+    $location.path('/home');
     res.sendStatus(403);
   }
 });
 
-// clear all server session information about this user
+// GET to clear all server session information about current user
 router.get('/logout', function(req, res) {
-  // Use passport's built-in method to log out the user
-  console.log('Logged out');
+  // this is passport's built-in logout method
   req.logOut();
   res.sendStatus(200);
 });
-
 
 module.exports = router;

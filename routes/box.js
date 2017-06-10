@@ -1,30 +1,29 @@
+// requires
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var path = require('path');
 var questionsModel = require('../models/questions.model');
 
+// GET questions selected by tag/keyword
 router.get('/:selected/:selected2/:selected3', function(req, res) {
-  console.log(' in get route for selected-->', req.params);
-  // check if logged in
+  // check if logged in & send back user object from database
   if(req.isAuthenticated()) {
-    // send back user object from database
-    console.log('still logged in');
+    // query to get selected tags for quiz
     questionsModel.aggregate([{$match: {display:'true', tags:{$in:[req.params.selected,req.params.selected2,req.params.selected3]}}},{$sample:{size:5}}], function(err, data){
       if (err) {
         console.log('Database Error: ', err);
         res.sendStatus(500);
-      } else{
-        console.log('data for tags for '+req.params.selected + req.params.selected2 + req.params.selected3 +' -->', data);
+      } else {
         res.send(data);
       }
     });
   } else {
-    // failure best handled on the server. do redirect here.
+    // redirect to /home if not logged in
     console.log('not logged in');
     $location.path('/home');
     res.sendStatus(403);
   }
-});
+});  // end GET selected tags
 
 module.exports = router;

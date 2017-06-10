@@ -1,17 +1,16 @@
+// requires
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var path = require('path');
 var questionsModel = require('../models/questions.model');
 
-// Handles Ajax request for user information if user is authenticated
+// GET questions selected by chapter
 router.get('/:chapter', function(req, res) {
-  console.log(' in get route for chapter-->', req.params.chapter);
   var currentChapter = parseInt(req.params.chapter);
-  // check if logged in
+  // check if user is logged in & send back user object from database
   if(req.isAuthenticated()) {
-    // send back user object from database
-    console.log('still logged in');
+    // query to get 5 random questions from selected chapter for quiz
     questionsModel.aggregate([{$match: {display:'true', chapter:currentChapter}},{$sample:{size:5}}], function(err, data){
       if (err) {
         console.log('Database Error: ', err);
@@ -22,27 +21,22 @@ router.get('/:chapter', function(req, res) {
       }
     });
   } else {
-    // failure best handled on the server. do redirect here.
-    console.log('not logged in');
+    // redirect to /home if not logged in
     $location.path('/home');
     res.sendStatus(403);
   }
 });
 
-
+// GET tags from database to display
 router.get('/', function(req, res) {
-  console.log(' in get route for tags');
-  // check if logged in
+  // check if user is logged in & send back user object from database
   if(req.isAuthenticated()) {
-    // send back user object from database
-    console.log('still logged in');
+    // query to get all distinct tags from database
     questionsModel.distinct('tags').sort().then(function(data) {
-      console.log('data for tags-->', data);
       res.send(data);
     });
   } else {
-    // failure best handled on the server. do redirect here.
-    console.log('not logged in');
+    // redirect to /home if not logged in
     $location.path("/home");
     res.sendStatus(403);
   }
@@ -51,5 +45,7 @@ router.get('/', function(req, res) {
 
 module.exports = router;
 
-// must use terminal to access mongo and run the following function to split tags into array after import from csv
+// note about mongoimport of csv file with initial data:
+// tags in csv file are imported as strings.
+// use terminal to access mongo and run the following function to split tags into array after import from csv.
 // db.questions.find().snapshot().forEach(function(x){x.tags=x.tags.split(', ');db.questions.save(x);});

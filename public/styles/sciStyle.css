@@ -10,7 +10,7 @@ h1,h2,h3{
   margin: 10px;
 }
 
-.container p {
+.container p{
   margin-top : 15px;
 }
 
@@ -29,13 +29,13 @@ label{
   font-weight: bold;
 }
 
-input {
+input{
   display: inline-block;
   float: left;
   width: 250px;
 }
 
-input.submitinput {
+input.submitinput{
   width: 80%;
 }
 
@@ -47,7 +47,7 @@ input.reviewinput{
   float: left;
 }
 
-.answer {
+.answer{
   color: red;
   font-weight: bold;
   font-size: 36px;
@@ -57,6 +57,26 @@ input.reviewinput{
   color:green;
   font-size: 36px;
   font-weight: bold;
+}
+
+.savebtn{
+  margin-left: 10px;
+  float: left;
+}
+
+.cancelbtn{
+  display: inline;
+  float: left;
+  margin-left: 25px;
+}
+
+.logoutbtn{
+  display: inline;
+  margin-left: 25px;
+}
+
+.points{
+  margin-left: 25px;
 }
 
 #header{
@@ -71,17 +91,6 @@ input.reviewinput{
   font-size: 20px;
 }
 
-#savebtn{
-  margin-left: 10px;
-  float: left;
-}
-
-#cancelbtn{
-  display: inline;
-  float: left;
-  margin-left: 25px;
-}
-
 #error{
   color: red;
   font-weight: bold;
@@ -89,15 +98,6 @@ input.reviewinput{
 
 #instructions{
   font-weight: bold;
-}
-
-#logoutbtn{
-  display: inline;
-  margin-left: 25px;
-}
-
-#points{
-  margin-left: 25px;
 }
 
 #welcome{

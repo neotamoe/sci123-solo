@@ -1,8 +1,8 @@
 <!-- this div on UserController -->
 <div ng-controller="UserController as uc" class="container">
   <h3 id="welcome">Welcome, {{uc.userName}}!</h3>
-  <md-button ng-href="#/user" id="mainbtn" class="md-raised md-accent">Main</md-button>
-  <md-button id="logoutbtn" class="md-raised md-warn" ng-click="uc.logout()">Log Out</md-button>
+  <md-button ng-href="#/user" class="md-raised md-accent">Main</md-button>
+  <md-button class="logoutbtn md-raised md-warn" ng-click="uc.logout()">Log Out</md-button>
 </div>
 <!-- remainder of page on ReviewController -->
 <div class="container">
@@ -52,7 +52,7 @@
         Desserts, Eggs, Emulsions, Energy, Fermentation, Fish & Shellfish, Flour, Food Science, Fruits & Vegetables, Heat Transfer,
         History, Lipids, Measurement, Meat, Milk, Molecules, Nutrition, Phases, Preservation, Proteins, Sauces, Science,
         Seeds, Vinegar, Water, Yeast, pH</p>
-    <md-button class="md-accent md-raised" id="savebtn" ng-click="rc.save(x)">Save</md-button>
-    <md-button class="md-accent md-raised" id="cancelbtn" ng-click="rc.cancel()">Cancel</md-button>
+    <md-button class="md-accent md-raised savebtn" ng-click="rc.save(x)">Save</md-button>
+    <md-button class="md-accent md-raised cancelbtn" ng-click="rc.cancel()">Cancel</md-button>
   </div>
 </div>

@@ -36,9 +36,9 @@ myApp.service('ReviewSubmitService', function($http,$routeParams,$route){
   };
 
   self.savePending = function(pending){
-    console.log('in POST savePending: ', pending);
+    console.log('in PUT savePending: ', pending);
     return $http({
-      method:'POST',
+      method:'PUT',
       url:'/pending',
       data: pending
     }).then(function(response){

@@ -1,9 +1,9 @@
 <div class="container">
   <h3 id="welcome">Welcome, {{uc.userName}}!</h3>
-  <md-button ng-href="#/review" id="reviewbtn" class="md-raised md-accent" ng-if="uc.adminStatus===true">Review Submitted Questions</md-button>
-  <md-button ng-href="#/submit" id="addbtn" class="md-raised md-accent">Submit a New Question</md-button>
-  <md-button id="logoutbtn" class="md-raised md-warn" ng-click="uc.logout()">Log Out</md-button>
-  <span id="points">Points: {{uc.points}}</span>
+  <md-button ng-href="#/review" class="md-raised md-accent" ng-if="uc.adminStatus===true">Review Submitted Questions</md-button>
+  <md-button ng-href="#/submit" class="md-raised md-accent">Submit a New Question</md-button>
+  <md-button class="logoutbtn md-raised md-warn" ng-click="uc.logout()">Log Out</md-button>
+  <span class="points">Points: {{uc.points}}</span>
 </div>
 <!-- instructions to user provided upon login -->
 <div class="container">

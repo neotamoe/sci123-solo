@@ -1,10 +1,10 @@
 <!-- page displays at end of quiz offering next options -->
 <div class="container">
-  <md-button ng-href="#/user" id="mainbtn" class="md-raised md-accent">Play Again</md-button>
-  <md-button ng-href="#/user" id="mainbtn" class="md-raised md-accent">Main</md-button>
-  <md-button ng-href="#/review" id="reviewbtn" class="md-raised md-accent" ng-if="uc.adminStatus===true">Review Submitted Questions</md-button>
-  <md-button id="logoutbtn" class="md-raised md-warn" ng-click="uc.logout()">Log Out</md-button>
-  <span id="points">Points: {{uc.points}}</span>
+  <md-button ng-href="#/user" class="md-raised md-accent">Play Again</md-button>
+  <md-button ng-href="#/user" class="md-raised md-accent">Main</md-button>
+  <md-button ng-href="#/review" class="md-raised md-accent" ng-if="uc.adminStatus===true">Review Submitted Questions</md-button>
+  <md-button class="logoutbtn md-raised md-warn" ng-click="uc.logout()">Log Out</md-button>
+  <span class="points">Points: {{uc.points}}</span>
 </div>
 <div class="container">
   <h2>Hooray!  You finished this round!</h2>
