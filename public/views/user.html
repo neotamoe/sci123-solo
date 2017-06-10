@@ -5,6 +5,7 @@
   <md-button id="logoutbtn" class="md-raised md-warn" ng-click="uc.logout()">Log Out</md-button>
   <span id="points">Points: {{uc.points}}</span>
 </div>
+<!-- instructions to user provided upon login -->
 <div class="container">
   <p><span><strong>Get started!</strong></span>  Select a chapter or choose up to three topics using the checkboxes below.
     You will see five questions randomly selected to test your Science of Food and Cooking knowledge.  Each
@@ -14,7 +15,7 @@
     <p><span><strong>Search by Chapter:</strong></span></p>
   </div>
 </div>
-
+<!-- option to take quiz by chapter -->
 <div layout="row" layout-sm="column" flex layout-align="center center" layout-wrap>
   <md-button ng-href="#/quiz/1" class="md-raised md-accent">Chapter 1: Milk and Dairy Products</md-button>
   <md-button ng-href="#/quiz/2" class="md-raised md-accent">Chapter 2: Eggs</md-button>
@@ -34,6 +35,7 @@
   <md-button ng-href="#/quiz/16" class="md-raised md-accent">Appendix</md-button>
   <md-button ng-href="#/quiz/17" class="md-raised md-accent">Measurement</md-button>
 </div>
+<!-- option to take quiz by tag/keyword -->
 <div class="md-padding checkbox container" ng-cloak="">
   <p><span><strong>Search by Topic:</strong></span></p>
   <div layout="row" layout-wrap>
@@ -46,8 +48,6 @@
     </div>
   </div>
 </div>
-<!-- remove the code line before deployment so it doesn't show on DOM-->
 <div class="container">
-  <code style="display: block; padding: 8px;">{{uc.selected | json}}</code>
   <md-button ng-href="#/tagsbox/{{uc.selected[0]}}/{{uc.selected[1]}}/{{uc.selected[2]}}" class="md-raised md-accent">Go!</md-button>
 </div>

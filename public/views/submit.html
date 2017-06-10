@@ -1,3 +1,4 @@
+<!-- this div on UserController -->
 <div ng-controller="UserController as uc" class="container">
   <h3 id="welcome">Welcome, {{uc.userName}}!</h3>
   <md-button ng-href="#/user" id="mainbtn" class="md-raised md-accent">Main</md-button>
@@ -5,6 +6,8 @@
   <md-button id="logoutbtn" class="md-raised md-warn" ng-click="uc.logout()">Log Out</md-button>
   <span id="points">Points: {{uc.points}}</span>
 </div>
+<!-- remainder of page on SubmitController -->
+<!-- instructions to student user -->
 <div class="container">
   <p><span id="instructions">IMPORTANT!  Please read and follow these instructions:</span> <br>
     For Source, enter Chapter x (e.g. Chapter 3), Appendix or Measurement Appendix.  Match capital letter use exactly.  For
@@ -13,6 +16,7 @@
     characters or use unicode for things like degrees &deg; and ampersand &amp;.  For answerEnter correct answer using
     capital letter with no punctuation.</p>
 </div>
+<!-- form to submit questions to database -->
 <form name="submitform">
     <div class="container">
 
@@ -44,7 +48,7 @@
       <input class="submitinput" type="text" name="answer" value="" placeholder="capital letter of correct answer (e.g. A)" ng-model="sc.submit.answer">
 
     </div><br>
-    <!-- tags to be added via checkboxes -->
+    <!-- tags added via checkboxes, limit of 3 -->
     <div class="container">
       <p><br><span><strong>Add up to 3 tags:</strong></span></p>
     </div>

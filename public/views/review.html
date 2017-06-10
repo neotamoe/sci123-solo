@@ -1,16 +1,16 @@
+<!-- this div on UserController -->
 <div ng-controller="UserController as uc" class="container">
   <h3 id="welcome">Welcome, {{uc.userName}}!</h3>
   <md-button ng-href="#/user" id="mainbtn" class="md-raised md-accent">Main</md-button>
   <md-button id="logoutbtn" class="md-raised md-warn" ng-click="uc.logout()">Log Out</md-button>
 </div>
-
+<!-- remainder of page on ReviewController -->
 <div class="container">
   <h3 ng-if="!rc.toReview.length">{{rc.nothingtoreview}}</h3>
 </div><br>
-
+<!-- this div shows up if there are questions for admin to review -->
 <div ng-show="rc.show" class="container" ng-repeat="x in rc.toReview">
   <div ng-if="rc.toReview_index == $index">
-    <!-- <label for="question input">Question: </label><input type="text" name="question" value="{{x.question}}"> -->
     <h3>Question: {{x.question}}</h3>
     <p>A: {{x.a}}</p>
     <p>B: {{x.b}}</p>
@@ -30,7 +30,7 @@
     <md-button class="md-accent md-raised" ng-click="rc.next()">Next/Skip</md-button>
   </div>
 </div><br>
-
+<!-- this div shows up if admin clicks edit button to enable editing and saving to database -->
 <div ng-hide="rc.hide" class="flex-container container" ng-repeat="x in rc.toReview">
   <div ng-if="rc.toReview_index == $index">
     <form>
@@ -46,7 +46,6 @@
       <label for="tags">Tags: </label><input class="reviewinput" type="text" value="{{x.tags[0]}}" ng-model="x.tags[0]"></input>
       <label for="tags">Tags: </label><input class="reviewinput" type="text" value="{{x.tags[1]}}" ng-model="x.tags[1]"></input>
       <label for="tags">Tags: </label><input class="reviewinput" type="text" value="{{x.tags[2]}}" ng-model="x.tags[2]"></input>
-
     </form>
     <br>
     <p class="currentTags">Current Tags: Alcohol, Baking, Bread, Cake, Carbohydrates, Cereal & Batters, Chemistry, Coffee, Cooking,
