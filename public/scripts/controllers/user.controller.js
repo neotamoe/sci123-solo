@@ -1,56 +1,48 @@
 myApp.controller('UserController', ['$http', '$location', 'questionsService', '$scope', function($http, $location, questionsService, $scope) {
-  // This happens after view/controller loads -- not ideal but it works for now.
+  // globals
   var vm = this;
+  vm.items = [];
+  vm.selected=[];
+  vm.limit = 3;
 
-  console.log('checking user');
-
-  // Upon load, check this user's session on the server
+  // when controller loads, check user's session on the server
   $http.get('/user').then(function(response) {
-    // username is actually email address
+    // user email is required to be unique so this is what is checked
     if(response.data.email) {
-      // user has a current session on the server
+      // user has current session on server
       vm.userName = response.data.firstName;
       vm.userEmail = response.data.email;
       vm.adminStatus = response.data.admin;
       console.log('User Data: ', vm.userEmail + 'user firstName:', vm.userName);
     } else {
       // user has no session, bounce them back to the login page
-      $location.path("/home");
+      $location.path('/home');
     }
   });
-
+  // logs out user from session on server
   vm.logout = function() {
     $http.get('/user/logout').then(function(response) {
-      console.log('logged out');
-      $location.path("/home");
+      $location.path('/home');
     });
   };
-
+  // gets tags/keywords from database for use in student question submission
   vm.getTags = function(){
     questionsService.getTags().then(function(data){
-      console.log('back from server with tags-->', data);
       vm.items = data;
-      console.log('vm.items:', vm.items);
       return vm.items;
     });
   };
-
+  // runs this function on page load
   vm.getTags();
-
+  // gets user stored points from database
   vm.counter = function(){
     questionsService.getCount(vm.userEmail).then(function(data){
       vm.points=data;
     });
   };
-
+  // runs this function on page load
   vm.counter();
-
-  vm.items = [];
-  vm.selected=[];
-
-  vm.limit = 3;
-
-
+  // when checkbox is clicked, adds or removes tag/keyword from vm.selected array
   vm.toggle = function (item, list) {
     var idx = list.indexOf(item);
     if (idx > -1) {
@@ -60,11 +52,9 @@ myApp.controller('UserController', ['$http', '$location', 'questionsService', '$
       list.push(item);
     }
   };
-
+  // checks to see if new checked tag/keyword is in vm.selected
   vm.exists = function (item, list) {
+    // evaluates to true or false for each ng-repeated checkbox item
     return list.indexOf(item) > -1;
   };
-
-
-
 }]);  // end UserController

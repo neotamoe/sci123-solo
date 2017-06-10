@@ -1,9 +1,8 @@
 myApp.service('questionsService', function($http,$routeParams,$route){
-
+  // globals
   var self = this;
-
   var count;
-
+  // get to retrieve points for current logged in user
   self.getCount = function(userEmail){
     return $http({
       method: 'GET',
@@ -12,13 +11,11 @@ myApp.service('questionsService', function($http,$routeParams,$route){
         email: userEmail,
       }
     }).then(function(response){
-      console.log('getCount response.data = ', response);
       count = response.data[0].points;
-      console.log('service get count:',count);
       return count;
     });
   };  // end getCount
-
+  // increases count and POSTS new points total to specific user document in user collection
   self.setCount = function(userEmail){
     count++;
     var objectToSend = {
@@ -30,19 +27,15 @@ myApp.service('questionsService', function($http,$routeParams,$route){
       url: '/points',
       data: objectToSend
     }).then(function(response){
-      console.log('setCount response = ', response);
       count = response.data.points;
-      console.log('service set count:',count);
       return count;
     });
   };  // end setCount
-
+  // gets questions utilizing $routeParams and based on selected tags/keywords chosen by user
   self.getTagsQuestions = function(tag,tag2,tag3){
     tag=$routeParams.selected;
     tag2=$routeParams.selected2;
     tag3=$routeParams.selected3;
-    console.log('getQuestions with $routeParams-->', $routeParams);
-    console.log('tags: 1:'+ tag + ' 2: '+ tag2 + ' 3: '+  tag3);
     return $http({
       method: 'GET',
       url: '/box/'+tag+'/'+tag2+'/'+tag3
@@ -50,9 +43,8 @@ myApp.service('questionsService', function($http,$routeParams,$route){
       return response.data;
     });
   };
-
+  // gets questions based on chapter selected by user
   self.getQuestions = function(chapter){
-    console.log('getQuestions from chapter-->', chapter);
     return $http({
       method: 'GET',
       url: '/questions/' + chapter,
@@ -60,27 +52,22 @@ myApp.service('questionsService', function($http,$routeParams,$route){
       return response.data;
     });
   };
-
+  // gets all tags/keywords from database
   self.getTags = function(){
-    console.log('get tags from all questions');
     return $http({
       method: 'GET',
       url: '/questions',
     }).then(function(response){
-      console.log('getTags response.data:', response.data);
       return response.data;
     });
   };
-
+  // updates selected questions in database that are flagged by user
   self.flag = function(id){
-    console.log('in flag function in service');
     return $http({
       method:'PUT',
       url:'/submit/' + id,
     }).then(function(response){
-      console.log('flag response:', response);
       return response;
     });
   };
-
 });  // end questionService

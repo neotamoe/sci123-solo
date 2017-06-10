@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial']);
 
-// ROUTES - CONFIG
+// routes config
 myApp.config(['$routeProvider', '$locationProvider','$mdThemingProvider', function($routeProvider, $locationProvider,$mdThemingProvider) {
   $locationProvider.hashPrefix('');
   $routeProvider
@@ -43,13 +43,13 @@ myApp.config(['$routeProvider', '$locationProvider','$mdThemingProvider', functi
     });
   $mdThemingProvider.theme('default')
     .primaryPalette('orange', {
-      'default': '400', // by default use shade 400 from the deep-purple palette for primary intentions
+      'default': '400', // by default use shade 400 from the orange palette for primary intentions
       'hue-1': '100', // use shade 100 for the md-hue-1 class
       'hue-2': '600', // use shade 600 for the md-hue-2 class
       'hue-3': 'A100' // use shade A100 for the md-hue-3 class
     })
     .accentPalette('deep-purple', {
-      'default': '300' // use shade 300 for default, and keep all other shades the same
+      'default': '300' // use shade 300 for default and keeps all other shades the same
     })
     .backgroundPalette('orange', {
       'default': '200'

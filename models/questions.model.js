@@ -3,7 +3,7 @@ var mongoose = require ('mongoose');
 var Schema = mongoose.Schema;
 var User = require ('./user.model');
 
-// schema
+// schema for questions collection in db sci123Solo
 var QuestionSchema = new Schema({
   userId:{type: Schema.Types.ObjectId, ref: 'User', required: true},
   userEmail: {type: Schema.Types.String, ref:'User', required: true},

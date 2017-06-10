@@ -1,64 +1,51 @@
 myApp.service('ReviewSubmitService', function($http,$routeParams,$route){
-
+  // globals
   var self = this;
-
+  // gets all questions from database with display: 'false' for review by admin
   self.getPendingQuestions = function(){
-    console.log('in get pending Questions');
     return $http({
       method: 'GET',
       url: '/pending/'
     }).then(function(response){
-      console.log('getPendingQuestions response:', response + 'response.data:', response.data);
       return response.data;
     });
   };
-
+  // approves question for use in quiz by updating display field from 'true' to 'false'
   self.approvePending = function(id){
-    console.log('in PUT approvePending');
     return $http({
       method:'PUT',
       url:'/pending/' + id,
     }).then(function(response){
-      console.log('approve pending service response:', response);
       return response;
     });
   };
-
+  // deletes question from quiz database
   self.deletePending = function(id){
-    console.log('in DELETE deletePending');
     return $http({
       method:'DELETE',
       url:'/pending/' + id,
     }).then(function(response){
-      console.log('delete pending service response:', response);
       return response;
     });
   };
-
+  // updates/saves question after editing by admin into database
   self.savePending = function(pending){
-    console.log('in PUT savePending: ', pending);
     return $http({
       method:'PUT',
       url:'/pending',
       data: pending
     }).then(function(response){
-      console.log('post SAVE pending service response:', response);
       return response;
     });
   };
-
+  // sends user question data to database for future review by admin
   self.studentSubmit = function(question){
-    console.log('in POST studentSubmit:', question);
     return $http({
       method: 'POST',
       url: '/submit',
       data: question
     }).then(function(response){
-      console.log('POST studentSubmit question response:', response);
       return response;
     });
   };
-
-
-
 });  // end questionService
