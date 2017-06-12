@@ -81,7 +81,7 @@ router.put('/:id', function(req, res) {
         var mailOptions = {
             from: '"Science123 Quiz" <science123app@gmail.com>',
             to: '"Sci123App Admin" <science123app@gmail.com>',
-            subject: 'Question added and ready for review',
+            subject: 'Question flagged by student user and needs review',
             text: 'Hello!  ' + req.user.email + ' flagged a question to the Science123 Quiz App.  Please log in to the app to review it for approval, denial or editing.', // plain text body
             html: '<h2>Hello!</h2><p>' + req.user.email + ' flagged a question to the <strong>Science123 Quiz App.</strong>  Please log in to the app to review it for approval, denial or editing.</p>' // html body
         };
