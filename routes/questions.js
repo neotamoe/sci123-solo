@@ -16,7 +16,6 @@ router.get('/:chapter', function(req, res) {
         console.log('Database Error: ', err);
         res.sendStatus(500);
       } else{
-        console.log('data for chapter' + currentChapter + '-->', data);
         res.send(data);
       }
     });

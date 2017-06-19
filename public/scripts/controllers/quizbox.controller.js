@@ -13,6 +13,7 @@ myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'question
     if(response.data.email) {
       // user has current session on server
       vm.userName = response.data.firstName;
+      vm.userEmail = response.data.email;
     } else {
       // user has no session, bounce them back to the login page
       $location.path('/home');
@@ -43,6 +44,7 @@ myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'question
   vm.counter = function(){
     questionsService.getCount(vm.userEmail).then(function(data){
       vm.points=data;
+      console.log('vm.points = ', vm.points);
     });
   };
   // runs this function on page load

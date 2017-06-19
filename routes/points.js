@@ -16,7 +16,6 @@ router.get('/', function(req, res) {
         console.log('Database Error: ', err);
         res.sendStatus(500);
       } else {
-        console.log('data for points query-->', data);
         res.send(data);
       }
     });
@@ -26,18 +25,16 @@ router.get('/', function(req, res) {
     res.sendStatus(403);
   }
 });
-// POST to add points to user total
-router.post('/', function(req, res) {
+// PUT to add points to user total
+router.put('/', function(req, res) {
   // check if logged in & send back user object from database
   if(req.isAuthenticated()) {
     // query to update user points in database
-    console.log('still logged in');
-    userModel.findOneAndUpdate({email:req.body.email},{points:req.body.points}, function(err, data){
+    userModel.findOneAndUpdate({email:req.body.email},{points:req.body.points}, {new: true}, function(err, data){
       if (err) {
         console.log('Database Error: ', err);
         res.sendStatus(500);
       } else{
-        console.log('data for points post-->', data);
         res.send(data);
       }
     });

@@ -23,7 +23,7 @@ myApp.service('questionsService', function($http,$routeParams,$route){
       points: count
     };
     return $http({
-      method: 'POST',
+      method: 'PUT',
       url: '/points',
       data: objectToSend
     }).then(function(response){
