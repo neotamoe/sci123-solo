@@ -44,7 +44,6 @@ myApp.controller('QuizBoxController', ['$scope', '$http', '$location', 'question
   vm.counter = function(){
     questionsService.getCount(vm.userEmail).then(function(data){
       vm.points=data;
-      console.log('vm.points = ', vm.points);
     });
   };
   // runs this function on page load
