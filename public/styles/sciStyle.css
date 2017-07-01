@@ -6,6 +6,12 @@ h1,h2,h3{
   font-family: 'Candal', sans-serif;
 }
 
+#hire {
+  margin-top: 75px;
+  font-style: italic;
+  color: purple;
+}
+
 .container{
   margin: 10px;
 }
