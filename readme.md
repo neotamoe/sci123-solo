@@ -34,10 +34,10 @@ npm start
 ![image](https://user-images.githubusercontent.com/25421749/28000794-ca612d84-64ed-11e7-88c4-c2dc6e966ea2.png)
 
 ### Quiz Question
-https://user-images.githubusercontent.com/25421749/28000797-cbaeedfc-64ed-11e7-938d-d8438a5093e3.png
+![image](https://user-images.githubusercontent.com/25421749/28000797-cbaeedfc-64ed-11e7-938d-d8438a5093e3.png)
 
 ### Admin Edit View
-https://user-images.githubusercontent.com/25421749/28000798-cd64f786-64ed-11e7-8209-df87ba5528c0.png
+![image](https://user-images.githubusercontent.com/25421749/28000798-cd64f786-64ed-11e7-8209-df87ba5528c0.png)
 
 ## Built With
 * MEAN Stack (MongoDB, Express, AngularJS, Node.js)
