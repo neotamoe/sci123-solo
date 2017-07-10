@@ -31,14 +31,13 @@ npm start
 
 ## Screenshots
 ### Quiz Selection
-https://user-images.githubusercontent.com/25421749/28000720-2529a634-64ed-11e7-99e5-41416ca241ce.png
+https://user-images.githubusercontent.com/25421749/28000794-ca612d84-64ed-11e7-88c4-c2dc6e966ea2.png
 
 ### Quiz Question
-https://user-images.githubusercontent.com/25421749/28000708-11e03c1e-64ed-11e7-8e76-15b33155232a.png
+https://user-images.githubusercontent.com/25421749/28000797-cbaeedfc-64ed-11e7-938d-d8438a5093e3.png
 
 ### Admin Edit View
-https://user-images.githubusercontent.com/25421749/28000723-2e5bc2a0-64ed-11e7-962d-01b8795b6f03.png
-
+https://user-images.githubusercontent.com/25421749/28000798-cd64f786-64ed-11e7-8209-df87ba5528c0.png
 
 ## Built With
 * MEAN Stack (MongoDB, Express, AngularJS, Node.js)
