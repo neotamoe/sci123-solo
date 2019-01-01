@@ -1,7 +1,9 @@
 {
   "name": "sci123-solo",
   "version": "1.0.0",
-  "engines": "6.11.1",
+  "engines": {
+    "node": "6.11.1"
+  },
   "description": "Solo project of Neota Moe, student at Prime Digital Academy (Psi cohort).  Quiz-style app for general education science course Sci123 at Augsburg College to complement learning.  App designed in partnership with Ben Stottrup, PhD.",
   "main": "server.js",
   "scripts": {
