@@ -9,8 +9,6 @@ var questionsModel = require('../models/questions.model');
 // http://sci123.herokuapp.com/#/quiz/extension
 router.get('/extension', function(req, res) {
   // query to get 1 random question for quiz
-  db.mycoll.aggregate([{ $sample: { size: 1 } }])
-
   questionsModel.aggregate([{$sample: { size: 1 }}], function(err, data){
     if (err) {
       console.log('Database Error: ', err);
