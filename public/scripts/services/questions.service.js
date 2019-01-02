@@ -52,15 +52,6 @@ myApp.service('questionsService', function($http,$routeParams,$route){
       return response.data;
     });
   };
-  // get random question for chrome extension
-  self.getQuestionForExtension = function(){
-    return $http({
-      method: 'GET',
-      url: '/extension',
-    }).then(function(response){
-      return response.data;
-    });
-  };
   // gets all tags/keywords from database
   self.getTags = function(){
     return $http({
