@@ -26,11 +26,6 @@ myApp.config(['$routeProvider', '$locationProvider','$mdThemingProvider', functi
       templateUrl: '/views/quiz.html',
       controller: "QuizController as qc"
     })
-    .when('/extension', {
-      // not really necessary for views, but for app to not crash
-      templateUrl: '/views/quiz.html',
-      controller: "QuizController as qc"
-    })
     .when('/endquiz', {
       templateUrl: '/views/endquiz.html',
       controller: "UserController as uc"
